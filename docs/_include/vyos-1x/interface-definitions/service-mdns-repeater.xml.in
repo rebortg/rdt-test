@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<interfaceDefinition>
+  <node name="service">
+    <children>
+      <node name="mdns">
+        <properties>
+          <help>Multicast DNS (mDNS) parameters</help>
+        </properties>
+        <children>
+          <node name="repeater" owner="${vyos_conf_scripts_dir}/service_mdns-repeater.py">
+            <properties>
+              <help>mDNS repeater configuration</help>
+              <priority>990</priority>
+            </properties>
+            <children>
+              #include <include/generic-disable-node.xml.i>
+              #include <include/generic-interface-multi.xml.i>
+              <leafNode name="vrrp-disable">
+                <properties>
+                  <help>Disables mDNS repeater on VRRP interfaces not in MASTER state</help>
+                  <valueless/>
+                </properties>
+              </leafNode>
+            </children>
+          </node>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

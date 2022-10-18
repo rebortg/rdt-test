@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!-- NTP configuration -->
+<interfaceDefinition>
+  <node name="system">
+    <children>
+      <node name="ntp" owner="${vyos_conf_scripts_dir}/ntp.py">
+        <properties>
+          <help>Network Time Protocol (NTP) configuration</help>
+          <priority>900</priority>
+        </properties>
+        <children>
+          <tagNode name="server">
+            <properties>
+              <help>Network Time Protocol (NTP) server</help>
+              <valueHelp>
+                <format>ipv4</format>
+                <description>IP address of NTP server</description>
+              </valueHelp>
+              <valueHelp>
+                <format>ipv6</format>
+                <description>IPv6 address of NTP server</description>
+              </valueHelp>
+              <valueHelp>
+                <format>hostname</format>
+                <description>Fully qualified domain name of NTP server</description>
+              </valueHelp>
+              <constraint>
+                <validator name="ipv4-address"/>
+                <validator name="ipv6-address"/>
+                <validator name="fqdn"/>
+              </constraint>
+            </properties>
+            <children>
+              <leafNode name="noselect">
+                <properties>
+                  <help>Marks the server as unused</help>
+                  <valueless/>
+                </properties>
+              </leafNode>
+              <leafNode name="pool">
+                <properties>
+                  <help>Associate with a number of remote servers</help>
+                  <valueless/>
+                </properties>
+              </leafNode>
+              <leafNode name="preempt">
+                <properties>
+                  <help>Specifies the association as preemptable rather than the default persistent</help>
+                  <valueless/>
+                </properties>
+              </leafNode>
+              <leafNode name="prefer">
+                <properties>
+                  <help>Marks the server as preferred</help>
+                  <valueless/>
+                </properties>
+              </leafNode>
+            </children>
+          </tagNode>
+          <node name="allow-clients">
+            <properties>
+              <help>Network Time Protocol (NTP) server options</help>
+            </properties>
+            <children>
+              <leafNode name="address">
+                <properties>
+                  <help>IP address</help>
+                  <valueHelp>
+                    <format>ipv4net</format>
+                    <description>IP address and prefix length</description>
+                  </valueHelp>
+                  <valueHelp>
+                    <format>ipv6net</format>
+                    <description>IPv6 address and prefix length</description>
+                  </valueHelp>
+                  <multi/>
+                  <constraint>
+                    <validator name="ip-prefix"/>
+                  </constraint>
+                </properties>
+              </leafNode>
+            </children>
+          </node>
+          #include <include/generic-interface-multi.xml.i>
+          #include <include/listen-address.xml.i>
+          #include <include/interface/vrf.xml.i>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

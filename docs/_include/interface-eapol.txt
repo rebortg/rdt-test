@@ -1,0 +1,41 @@
+:abbr:`EAP (Extensible Authentication Protocol)` over LAN (EAPoL) is a network
+port authentication protocol used in IEEE 802.1X (Port Based Network Access
+Control) developed to give a generic network sign-on to access network
+resources.
+
+EAPoL comes with an identify option. We automatically use the interface MAC
+address as identity parameter.
+
+.. cfgcmd:: set interfaces {{ var0 }} <interface> {{ var2 }} {{ var3 }}
+  {{ var5 }} {{ var6 }} eapol ca-certificate <name>
+
+  Set the name of the SSL :abbr:`CA (Certificate Authority)` PKI entry used for
+  authentication of the remote side. If an intermediate CA certificate is
+  specified, then all parent CA certificates that exist in the PKI, such as the
+  root CA or additional intermediate CAs, will automatically be used during
+  certificate validation to ensure that the full chain of trust is available.
+
+  Example:
+
+  .. code-block:: none
+
+    set pki ca eapol-server-intermediate-ca <Server intermediate CA contents>
+    set pki ca eapol-server-root-ca <Server root CA contents>
+    set interfaces {{ var0 }} {{ var1 }} {{ var2 }} {{ var4 }} {{ var5 }} {{ var7 }} eapol ca-certificate eapol-server-intermediate-ca
+
+.. cfgcmd:: set interfaces {{ var0 }} <interface> {{ var2 }} {{ var3 }}
+  {{ var5 }} {{ var6 }} eapol certificate <name>
+
+  Set the name of the x509 client keypair used to authenticate against the
+  802.1x system. All parent CA certificates of the client certificate, such as
+  intermediate and root CAs, will be sent as part of the EAP-TLS handshake.
+
+  Example:
+
+  .. code-block:: none
+
+    set pki ca eapol-client-intermediate-ca <Client intermediate CA contents>
+    set pki ca eapol-client-root-ca <Client root CA contents>
+    set pki certificate eapol-client certificate <Client certificate contents>
+    set pki certificate eapol-client private key <Client private key contents>
+    set interfaces {{ var0 }} {{ var1 }} {{ var2 }} {{ var4 }} {{ var5 }} {{ var7 }} eapol certificate eapol-client

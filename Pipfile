@@ -4,10 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-sphinx = "*"
-sphinx-intl = "*"
+sphinx-rtd-theme = "==1.0.0"
+docutils = "*"
+lxml = "==4.9.1"
+sphinx-notfound-page = "==0.8"
+Sphinx = "==4.5.0"
+sphinx-panels = "==0.6.0"
+sphinx-autobuild = "==2021.3.14"
+myst-parser = "==0.17.1"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.9"

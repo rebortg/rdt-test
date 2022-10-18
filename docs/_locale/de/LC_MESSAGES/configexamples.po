@@ -1,0 +1,2960 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-18 22:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:3
+msgid "DHCP Relay trough GRE-Bridge"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:6
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:6
+msgid "Testdate: 2022-10-09"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:7
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:7
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:7
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:8
+msgid "Version: 1.4-rolling-202210090955"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:10
+msgid ""
+"This simple structure shows how to configure a DHCP Relay over a GRE "
+"Bridge interface."
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:15
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:52
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:15
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:26
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:72
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:55
+msgid "Topology"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:17
+msgid ""
+"The topology has 3 VyOS routers and one client. Between the DHCP Server "
+"and the DHCP Relay is a GRE tunnel. The `transport` VyOS represent a "
+"large Network."
+msgstr ""
+
+msgid "Ansible Example topology image"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:26
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:25
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:37
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:12
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:139
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:231
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:290
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:774
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:100
+#: ../../configexamples/ospf-unnumbered.rst:12
+msgid "Configuration"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:28
+msgid "First, we configure the transport network and the Tunnel interface."
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:31
+msgid "Transport:"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:37
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:55
+msgid "DHCP-Server"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:44
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:62
+msgid "DHCP-Relay"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:51
+msgid ""
+"After this, we need the DHCP-Server and Relay configuration. To get a "
+"testable result, we just have one IP in the DHCP range. Expand it as you "
+"need it."
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:71
+msgid "Test the result"
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:73
+msgid "Ping the Client from the DHCP Server."
+msgstr ""
+
+#: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:90
+msgid "And show all DHCP Leases"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:4
+msgid "L3VPN EVPN with VyOS"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:6
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:7
+msgid "Testdate: 2022-10-10"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:9
+msgid ""
+"I spun up a new lab in EVE-NG, which represents this as the \"Foo Bar - "
+"Service Provider Inc.\" that has 3 points of presence (PoP) in random "
+"datacenters/sites named PE1, PE2, and PE3. Each PoP aggregates at least "
+"two customers."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:14
+msgid ""
+"I named the customers blue, red and green which is common practice in VRF"
+" (Virtual Routing and Forwarding) documentation scenarios."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:17
+msgid ""
+"PE1 is located in an industrial area that holds multiple office "
+"buildings. All customers have a site in this area."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:19
+msgid ""
+"PE2 is located in a smaller area where by coincidence two customers (blue"
+" and red) share an office building."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:21
+msgid ""
+"PE3 is located in a smaller area where by coincidence two customers (blue"
+" and green) are located."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:26
+msgid "Management VRF"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:28
+msgid ""
+"A brief excursion into VRFs: This has been one of the longest-standing "
+"feature requests of VyOS (dating back to 2016) which can be described as "
+"\"a VLAN for layer 2 is what a VRF is for layer 3\". With VRFs, a "
+"router/system can hold multiple, isolated routing tables on the same "
+"system. If you wonder what's the difference between multiple tables that "
+"people used for policy-based routing since forever, it's that a VRF also "
+"isolates connected routes rather than just static and dynamically learned"
+" routes, so it allows NICs in different VRFs to use conflicting network "
+"ranges without issues."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:38
+msgid ""
+"VyOS 1.3 added initial support for VRFs (including IPv4/IPv6 static "
+"routing) and VyOS 1.4 now enables full dynamic routing protocol support "
+"for OSPF, IS-IS, and BGP for individual VRFs."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:42
+msgid ""
+"The lab I built is using a VRF (called **mgmt**) to provide out-of-band "
+"SSH access to the PE (Provider Edge) routers."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:54
+msgid "We use the following network topology in this example:"
+msgstr ""
+
+msgid "L3VPN EVPN with VyOS topology image"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:62
+msgid "Core network"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:64
+msgid ""
+"I chose to run OSPF as the IGP (Interior Gateway Protocol). All required "
+"BGP sessions are established via a dummy interfaces (similar to the "
+"loopback, but in Linux you can have only one loopback, while there can be"
+" many dummy interfaces) on the PE routers. In case of a link failure, "
+"traffic is diverted in the other direction in this triangle setup and BGP"
+" sessions will not go down. One could even enable BFD (Bidirectional "
+"Forwarding Detection) on the links for a faster failover and resilience "
+"in the network."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:73
+msgid ""
+"Regular VyOS users will notice that the BGP syntax has changed in VyOS "
+"1.4 from even the prior post about this subject. This is due to T1711, "
+"where it was finally decided to get rid of the redundant BGP ASN "
+"(Autonomous System Number) specification on the CLI and move it to a "
+"single leaf node (set protocols bgp local-as)."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:79
+msgid ""
+"It's important to note that all your existing configurations will be "
+"migrated automatically on image upgrade. Nothing to do on your side."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:82
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:123
+msgid "PE1"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:88
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:129
+msgid "PE2"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:94
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:135
+msgid "PE3"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:103
+msgid "Tenant networks (VRFs)"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:105
+msgid ""
+"Once all routers can be safely remotely managed and the core network is "
+"operational, we can now setup the tenant networks."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:108
+msgid ""
+"Every tenant is assigned an individual VRF that would support overlapping"
+" address ranges for customers blue, red and green. In our example, we do "
+"not use overlapping ranges to make it easier when showing debug commands."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:112
+msgid "Thus you can easily match it to one of the devices/networks below."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:114
+msgid ""
+"Every router that provides access to a customer network needs to have the"
+" customer network (VRF + VNI) configured. To make our own lives easier, "
+"we utilize the same VRF table id (local routing table number) and VNI "
+"(Virtual Network Identifier) per tenant on all our routers."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:119
+msgid "blue uses local routing table id and VNI 2000"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:120
+msgid "red uses local routing table id and VNI 3000"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:121
+msgid "green uses local routing table id and VNI 4000"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:143
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:85
+msgid "Testing and debugging"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:145
+msgid ""
+"You managed to come this far, now we want to see the network and routing "
+"tables in action."
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:148
+msgid "Show routes for all VRFs"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:189
+msgid "Information about Ethernet Virtual Private Networks"
+msgstr ""
+
+#: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:236
+msgid ""
+"If we need to retrieve information about a specific host/network inside "
+"the EVPN network we need to run"
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:3
+msgid "Wireguard"
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:10
+msgid ""
+"This simple structure show how to connect two offices. One remote branch "
+"and the central office."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:17
+msgid ""
+"The topology have a central and a branch VyOS router and one client, to "
+"test, in each site."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:27
+msgid "Set the local subnet on eth2 and the public ip address eth1 on each site."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:29
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:55
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:71
+msgid "Central"
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:35
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:61
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:77
+msgid "Branch"
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:42
+msgid ""
+"Next thing to do, is to create a wireguard keypair on each side. After "
+"this, the public key can be displayed, to save for later."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:52
+msgid "After you have each public key. The wireguard interfaces can be setup."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:68
+msgid ""
+"To reach the network, a route must be set on each VyOS host. In this "
+"structure, a static interface route will fit the requirements."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:87
+msgid ""
+"After all is done and commit, let's take a look if the Wireguard "
+"interface is up and running."
+msgstr ""
+
+#: ../../configexamples/autotest/Wireguard/Wireguard.rst:99
+msgid "And ping the Branch PC from your central router to check the response."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:5
+msgid "Tunnelbroker.net (IPv6)"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:10
+msgid ""
+"This guide walks through the setup of https://www.tunnelbroker.net/ for "
+"an IPv6 Tunnel."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:14
+#: ../../configexamples/azure-vpn-bgp.rst:16
+#: ../../configexamples/azure-vpn-dual-bgp.rst:13
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:16
+msgid ""
+"A public, routable IPv4 address. This does not necessarily need to be "
+"static, but you will need to update the tunnel endpoint when/if your IP "
+"address changes, which can be done with a script and a scheduled task."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:19
+msgid "Account at https://www.tunnelbroker.net/"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:20
+msgid ""
+"Requested a \"Regular Tunnel\". You want to choose a location that is "
+"closest to your physical location for the best response time."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:28
+msgid ""
+"The example topology has 2 VyOS routers. One as The WAN Router and on as "
+"a Client, to test a single LAN setup"
+msgstr ""
+
+msgid "Tunnelbroker topology image"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:39
+msgid "First, we configure the ``vyos-wan`` interface to get a DHCP address."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:45
+msgid "Now we are able to setup the tunnel interface."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:51
+msgid "Setup the ipv6 default route to the tunnel interface"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:57
+msgid "Now you should be able to ping a public IPv6 Address"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:74
+msgid ""
+"Assuming the pings are successful, you need to add some DNS servers. Some"
+" options:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:81
+msgid "You should now be able to ping something by IPv6 DNS name:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:100
+msgid "LAN Configuration"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:102
+msgid ""
+"At this point, your VyOS install should have full IPv6, but now your LAN "
+"devices need access."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:105
+msgid "With Tunnelbroker.net, you have two options:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:107
+msgid ""
+"Routed /64. This is the default assignment. In IPv6-land, it's good for a"
+" single \"LAN\", and is somewhat equivalent to a /24."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:110
+msgid ""
+"Routed /48. This is something you can request by clicking the \"Assign "
+"/48\" link in the Tunnelbroker.net tunnel config. It allows you to have "
+"up to 65k"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:113
+msgid ""
+"Unlike IPv4, IPv6 is really not designed to be broken up smaller than "
+"/64. So if you ever want to have multiple LANs, VLANs, DMZ, etc, you'll "
+"want to ignore the assigned /64, and request the /48 and use that."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:119
+msgid "Single LAN Setup"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:121
+msgid ""
+"Single LAN setup where eth2 is your LAN interface. Use the Tunnelbroker "
+"Routed /64 prefix:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:128
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:195
+msgid ""
+"Please note, 'autonomous-flag' and 'on-link-flag' are enabled by default,"
+" 'valid-lifetime' and 'preferred-lifetime' are set to default values of "
+"30 days and 4 hours respectively."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:132
+msgid "And the ``client`` to receive an IPv6 address with stateless autoconfig."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:137
+msgid "This accomplishes a few things:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:139
+msgid "Sets your LAN interface's IP address"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:140
+msgid ""
+"Enables router advertisements. This is an IPv6 alternative for DHCP "
+"(though DHCPv6 can still be used). With RAs, Your devices will "
+"automatically find the information they need for routing and DNS."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:144
+msgid "Now the Client is able to ping a public IPv6 address"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:162
+msgid "Multiple LAN/DMZ Setup"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:164
+msgid ""
+"That's how you can expand the example above. Use the `Routed /48` "
+"information. This allows you to assign a different /64 to every "
+"interface, LAN, or even device. Or you could break your network into "
+"smaller chunks like /56 or /60."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:169
+msgid "The format of these addresses:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:171
+msgid ""
+"`2001:470:xxxx::/48`: The whole subnet. xxxx should come from "
+"Tunnelbroker."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:172
+msgid "`2001:470:xxxx:1::/64`: A subnet suitable for a LAN"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:173
+msgid "`2001:470:xxxx:2::/64`: Another subnet"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:174
+msgid "`2001:470:xxxx:ffff:/64`: The last usable /64 subnet."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:176
+msgid ""
+"In the above examples, 1,2,ffff are all chosen by you. You can use 1-ffff"
+" (1-65535)."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:179
+msgid ""
+"So, when your LAN is eth1, your DMZ is eth2, your cameras are on eth3, "
+"etc:"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:200
+msgid "Firewall"
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:202
+msgid ""
+"Finally, don't forget the :ref:`firewall`. The usage is identical, except"
+" for instead of `set firewall name NAME`, you would use `set firewall "
+"ipv6-name NAME`."
+msgstr ""
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:206
+msgid ""
+"Similarly, to attach the firewall, you would use `set interfaces ethernet"
+" eth0 firewall in ipv6-name` or `set firewall zone LOCAL from WAN "
+"firewall ipv6-name`."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:6
+msgid "Route-Based Site-to-Site VPN to Azure (BGP over IKEv2/IPsec)"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:8
+msgid ""
+"This guide shows an example of a route-based IKEv2 site-to-site VPN to "
+"Azure using VTI and BGP for dynamic routing updates."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:11
+msgid ""
+"For redundant / active-active configurations see :ref:`examples-azure-"
+"vpn-dual-bgp`"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:18
+msgid ""
+"A pair of Azure VNet Gateways deployed in active-passive configuration "
+"with BGP enabled."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:21
+#: ../../configexamples/azure-vpn-dual-bgp.rst:18
+msgid ""
+"A local network gateway deployed in Azure representing the Vyos device, "
+"matching the below Vyos settings except for address space, which only "
+"requires the Vyos private IP, in this example 10.10.0.5/32"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:26
+#: ../../configexamples/azure-vpn-dual-bgp.rst:23
+msgid ""
+"A connection resource deployed in Azure linking the Azure VNet gateway "
+"and the local network gateway representing the Vyos device."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:31
+#: ../../configexamples/azure-vpn-dual-bgp.rst:28
+msgid "Example"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:34
+#: ../../configexamples/azure-vpn-dual-bgp.rst:31
+msgid "WAN Interface"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:34
+#: ../../configexamples/azure-vpn-dual-bgp.rst:31
+msgid "eth0"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:36
+#: ../../configexamples/azure-vpn-dual-bgp.rst:33
+msgid "On-premises address space"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:36
+#: ../../configexamples/azure-vpn-dual-bgp.rst:33
+msgid "10.10.0.0/16"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:38
+#: ../../configexamples/azure-vpn-dual-bgp.rst:35
+msgid "Azure address space"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:38
+#: ../../configexamples/azure-vpn-dual-bgp.rst:35
+msgid "10.0.0.0/16"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:40
+#: ../../configexamples/azure-vpn-dual-bgp.rst:37
+msgid "Vyos public IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:40
+#: ../../configexamples/azure-vpn-dual-bgp.rst:37
+msgid "198.51.100.3"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:42
+#: ../../configexamples/azure-vpn-dual-bgp.rst:39
+msgid "Vyos private IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:42
+#: ../../configexamples/azure-vpn-dual-bgp.rst:39
+msgid "10.10.0.5"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:44
+msgid "Azure VNet Gateway public IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:44
+#: ../../configexamples/azure-vpn-dual-bgp.rst:41
+msgid "203.0.113.2"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:46
+#: ../../configexamples/azure-vpn-dual-bgp.rst:45
+msgid "Azure VNet Gateway BGP IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:46
+msgid "10.0.0.4"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:48
+#: ../../configexamples/azure-vpn-dual-bgp.rst:47
+msgid "Pre-shared key"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:48
+#: ../../configexamples/azure-vpn-dual-bgp.rst:47
+msgid "ch00s3-4-s3cur3-psk"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:50
+#: ../../configexamples/azure-vpn-dual-bgp.rst:49
+msgid "Vyos ASN"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:50
+#: ../../configexamples/azure-vpn-dual-bgp.rst:49
+msgid "64499"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:52
+#: ../../configexamples/azure-vpn-dual-bgp.rst:51
+msgid "Azure ASN"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:52
+#: ../../configexamples/azure-vpn-dual-bgp.rst:51
+msgid "65540"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:56
+#: ../../configexamples/azure-vpn-dual-bgp.rst:55
+msgid "Vyos configuration"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:58
+#: ../../configexamples/azure-vpn-dual-bgp.rst:57
+msgid ""
+"Configure the IKE and ESP settings to match a subset of those supported "
+"by Azure:"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:80
+#: ../../configexamples/azure-vpn-dual-bgp.rst:79
+msgid "Enable IPsec on eth0"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:86
+msgid "Configure a VTI with a dummy IP address"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:93
+#: ../../configexamples/azure-vpn-dual-bgp.rst:95
+msgid "Clamp the VTI's MSS to 1350 to avoid PMTU blackholes."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:99
+msgid "Configure the VPN tunnel"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:115
+msgid "**Important**: Add an interface route to reach Azure's BGP listener"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:121
+#: ../../configexamples/azure-vpn-dual-bgp.rst:137
+msgid "Configure your BGP settings"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-bgp.rst:131
+msgid "**Important**: Disable connected check \\"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:6
+msgid "Route-Based Redundant Site-to-Site VPN to Azure (BGP over IKEv2/IPsec)"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:8
+msgid ""
+"This guide shows an example of a redundant (active-active) route-based "
+"IKEv2 site-to-site VPN to Azure using VTI and BGP for dynamic routing "
+"updates."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:15
+msgid ""
+"A pair of Azure VNet Gateways deployed in active-active configuration "
+"with BGP enabled."
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:41
+msgid "Azure VNet Gateway 1 public IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:43
+msgid "Azure VNet Gateway 2 public IP"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:43
+msgid "203.0.113.3"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:45
+msgid "10.0.0.4,10.0.0.5"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:85
+msgid "Configure two VTIs with a dummy IP address each"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:102
+msgid "Configure the VPN tunnels"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:130
+msgid "**Important**: Add an interface route to reach both Azure's BGP listeners"
+msgstr ""
+
+#: ../../configexamples/azure-vpn-dual-bgp.rst:152
+msgid ""
+"**Important**: Disable connected check, otherwise the routes learned from"
+" Azure will not be imported into the routing table."
+msgstr ""
+
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:7
+msgid "BGP IPv6 unnumbered with extended nexthop"
+msgstr ""
+
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:9
+msgid "General information can be found in the :ref:`routing-bgp` chapter."
+msgstr ""
+
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:14
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:57
+#: ../../configexamples/ospf-unnumbered.rst:14
+#: ../../configexamples/ospf-unnumbered.rst:52
+msgid "Router A:"
+msgstr ""
+
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:34
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:118
+#: ../../configexamples/ospf-unnumbered.rst:31
+#: ../../configexamples/ospf-unnumbered.rst:87
+msgid "Router B:"
+msgstr ""
+
+#: ../../configexamples/bgp-ipv6-unnumbered.rst:55
+#: ../../configexamples/ospf-unnumbered.rst:50
+msgid "Results"
+msgstr ""
+
+#: ../../configexamples/ha.rst:7
+msgid "High Availability Walkthrough"
+msgstr ""
+
+#: ../../configexamples/ha.rst:9
+msgid ""
+"This document walks you through a complete HA setup of two VyOS machines."
+" This design is based on a VM as the primary router and a physical "
+"machine as a backup, using VRRP, BGP, OSPF, and conntrack sharing."
+msgstr ""
+
+#: ../../configexamples/ha.rst:13
+msgid ""
+"This document aims to walk you through setting everything up, so at a "
+"point where you can reboot any machine and not lose more than a few "
+"seconds worth of connectivity."
+msgstr ""
+
+#: ../../configexamples/ha.rst:18
+msgid "Design"
+msgstr ""
+
+#: ../../configexamples/ha.rst:20
+msgid ""
+"This is based on a real-life production design. One of the complex issues"
+" is ensuring you have redundant data INTO your network. We do this with a"
+" pair of Cisco Nexus switches and using Virtual PortChannels that are "
+"spanned across them. As a bonus, this also allows for complete switch "
+"failure without an outage. How you achieve this yourself is left as an "
+"exercise to the reader. But our setup is documented here."
+msgstr ""
+
+#: ../../configexamples/ha.rst:28
+msgid "Walkthrough suggestion"
+msgstr ""
+
+#: ../../configexamples/ha.rst:30
+msgid ""
+"The ``commit`` command is implied after every section. If you make an "
+"error, ``commit`` will warn you and you can fix it before getting too far"
+" into things. Please ensure you commit early and commit often."
+msgstr ""
+
+#: ../../configexamples/ha.rst:34
+msgid ""
+"If you are following through this document, it is strongly suggested you "
+"complete the entire document, ONLY doing the virtual router1 steps, and "
+"then come back and walk through it AGAIN on the backup hardware router."
+msgstr ""
+
+#: ../../configexamples/ha.rst:38
+msgid ""
+"This ensures you don't go too fast or miss a step. However, it will make "
+"your life easier to configure the fixed IP address and default route now "
+"on the hardware router."
+msgstr ""
+
+#: ../../configexamples/ha.rst:43
+msgid "Example Network"
+msgstr ""
+
+#: ../../configexamples/ha.rst:45
+msgid ""
+"In this document, we have been allocated 203.0.113.0/24 by our upstream "
+"provider, which we are publishing on VLAN100."
+msgstr ""
+
+#: ../../configexamples/ha.rst:48
+msgid ""
+"They want us to establish a BGP session to their routers on 192.0.2.11 "
+"and 192.0.2.12 from our routers 192.0.2.21 and 192.0.2.22. They are AS "
+"65550 and we are AS 65551."
+msgstr ""
+
+#: ../../configexamples/ha.rst:52
+msgid ""
+"Our routers are going to have a floating IP address of 203.0.113.1, and "
+"use .2 and .3 as their fixed IPs."
+msgstr ""
+
+#: ../../configexamples/ha.rst:55
+msgid "We are going to use 10.200.201.0/24 for an 'internal' network on VLAN201."
+msgstr ""
+
+#: ../../configexamples/ha.rst:57
+msgid ""
+"When traffic is originated from the 10.200.201.0/24 network, it will be "
+"masqueraded to 203.0.113.1"
+msgstr ""
+
+#: ../../configexamples/ha.rst:60
+msgid ""
+"For connection between sites, we are running a WireGuard link to two "
+"REMOTE routers and using OSPF over those links to distribute routes. That"
+" remote site is expected to send traffic from anything in 10.201.0.0/16"
+msgstr ""
+
+#: ../../configexamples/ha.rst:65
+msgid "VLANs"
+msgstr ""
+
+#: ../../configexamples/ha.rst:67
+msgid "These are the vlans we will be using:"
+msgstr ""
+
+#: ../../configexamples/ha.rst:69
+msgid "50: Upstream, using the 192.0.2.0/24 network allocated by them."
+msgstr ""
+
+#: ../../configexamples/ha.rst:70
+msgid "100: 'Public' network, using our 203.0.113.0/24 network."
+msgstr ""
+
+#: ../../configexamples/ha.rst:71
+msgid "201: 'Internal' network, using 10.200.201.0/24"
+msgstr ""
+
+#: ../../configexamples/ha.rst:74
+msgid "Hardware"
+msgstr ""
+
+#: ../../configexamples/ha.rst:76
+msgid "switch1 (Nexus 10gb Switch)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:77
+msgid "switch2 (Nexus 10gb Switch)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:78
+msgid "compute1 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:79
+msgid "compute2 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:80
+msgid "compute3 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:81
+msgid "router2 (Random 1RU machine with 4 NICs)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:83
+msgid "Note that router1 is a VM that runs on one of the compute nodes."
+msgstr ""
+
+#: ../../configexamples/ha.rst:86
+msgid "Network Cabling"
+msgstr ""
+
+#: ../../configexamples/ha.rst:88
+msgid ""
+"From Datacenter - This connects into port 1 on both switches, and is "
+"tagged as VLAN 50"
+msgstr ""
+
+#: ../../configexamples/ha.rst:90
+msgid "Cisco VPC Crossconnect - Ports 39 and 40 bonded between each switch"
+msgstr ""
+
+#: ../../configexamples/ha.rst:91
+msgid "Hardware Router - Port 8 of each switch"
+msgstr ""
+
+#: ../../configexamples/ha.rst:92
+msgid "compute1 - Port 9 of each switch"
+msgstr ""
+
+#: ../../configexamples/ha.rst:93
+msgid "compute2 - Port 10 of each switch"
+msgstr ""
+
+#: ../../configexamples/ha.rst:94
+msgid "compute3 - Port 11 of each switch"
+msgstr ""
+
+#: ../../configexamples/ha.rst:96
+msgid ""
+"This is ignoring the extra Out-of-band management networking, which "
+"should be on totally different switches, and a different feed into the "
+"rack, and is out of scope of this."
+msgstr ""
+
+#: ../../configexamples/ha.rst:100
+msgid ""
+"Our implementation uses VMware's Distributed Port Groups, which allows "
+"VMware to use LACP. This is a part of the ENTERPRISE licence, and is not "
+"available on a free licence. If you are implementing this and do not have"
+" access to DPGs, you should not use VMware, and use some other "
+"virtualization platform instead."
+msgstr ""
+
+#: ../../configexamples/ha.rst:108
+msgid "Basic Setup (via console)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:110
+msgid ""
+"Create your router1 VM. So it can withstand a VM Host failing or a "
+"network link failing. Using VMware, this is achieved by enabling vSphere "
+"DRS, vSphere Availability, and creating a Distributed Port Group that "
+"uses LACP."
+msgstr ""
+
+#: ../../configexamples/ha.rst:114
+msgid ""
+"Many other Hypervisors do this, and I'm hoping that this document will be"
+" expanded to document how to do this for others."
+msgstr ""
+
+#: ../../configexamples/ha.rst:117
+msgid ""
+"Create an 'All VLANs' network group, that passes all trunked traffic "
+"through to the VM. Attach this network group to router1 as eth0."
+msgstr ""
+
+#: ../../configexamples/ha.rst:120
+msgid ""
+"VMware: You must DISABLE SECURITY on this Port group. Make sure that "
+"``Promiscuous Mode``\\ , ``MAC address changes`` and ``Forged transmits``"
+" are enabled. All of these will be done as part of failover."
+msgstr ""
+
+#: ../../configexamples/ha.rst:125
+msgid "Bonding on Hardware Router"
+msgstr ""
+
+#: ../../configexamples/ha.rst:127
+msgid ""
+"Create a LACP bond on the hardware router. We are assuming that eth0 and "
+"eth1 are connected to port 8 on both switches, and that those ports are "
+"configured as a Port-Channel."
+msgstr ""
+
+#: ../../configexamples/ha.rst:141
+msgid "Assign external IP addresses"
+msgstr ""
+
+#: ../../configexamples/ha.rst:143
+msgid ""
+"VLAN 100 and 201 will have floating IP addresses, but VLAN50 does not, as"
+" this is talking directly to upstream. Create our IP address on vlan50."
+msgstr ""
+
+#: ../../configexamples/ha.rst:146
+msgid ""
+"For the hardware router, replace ``eth0`` with ``bond0``. As (almost) "
+"every command is identical, this will not be specified unless different "
+"things need to be performed on different hosts."
+msgstr ""
+
+#: ../../configexamples/ha.rst:154
+msgid "In this case, the hardware router has a different IP, so it would be"
+msgstr ""
+
+#: ../../configexamples/ha.rst:161
+msgid "Add (temporary) default route"
+msgstr ""
+
+#: ../../configexamples/ha.rst:163
+msgid ""
+"It is assumed that the routers provided by upstream are capable of acting"
+" as a default router, add that as a static route."
+msgstr ""
+
+#: ../../configexamples/ha.rst:174
+msgid "Enable SSH"
+msgstr ""
+
+#: ../../configexamples/ha.rst:176
+msgid ""
+"Enable SSH so you can now SSH into the routers, rather than using the "
+"console."
+msgstr ""
+
+#: ../../configexamples/ha.rst:184
+msgid ""
+"At this point, you should be able to SSH into both of them, and will no "
+"longer need access to the console (unless you break something!)"
+msgstr ""
+
+#: ../../configexamples/ha.rst:189
+msgid "VRRP Configuration"
+msgstr ""
+
+#: ../../configexamples/ha.rst:191
+msgid ""
+"We are setting up VRRP so that it does NOT fail back when a machine "
+"returns into service, and it prioritizes router1 over router2."
+msgstr ""
+
+#: ../../configexamples/ha.rst:195
+msgid "Internal Network"
+msgstr ""
+
+#: ../../configexamples/ha.rst:197
+msgid ""
+"This has a floating IP address of 10.200.201.1/24, using virtual router "
+"ID 201. The difference between them is the interface name, hello-source-"
+"address, and peer-address."
+msgstr ""
+
+#: ../../configexamples/ha.rst:201 ../../configexamples/ha.rst:237
+#: ../../configexamples/ha.rst:366 ../../configexamples/ha.rst:540
+msgid "**router1**"
+msgstr ""
+
+#: ../../configexamples/ha.rst:215 ../../configexamples/ha.rst:250
+#: ../../configexamples/ha.rst:581
+msgid "**router2**"
+msgstr ""
+
+#: ../../configexamples/ha.rst:230
+msgid "Public Network"
+msgstr ""
+
+#: ../../configexamples/ha.rst:232
+msgid ""
+"This has a floating IP address of 203.0.113.1/24, using virtual router ID"
+" 113. The virtual router ID is just a random number between 1 and 254, "
+"and can be set to whatever you want. Best practices suggest you try to "
+"keep them unique enterprise-wide."
+msgstr ""
+
+#: ../../configexamples/ha.rst:265
+msgid "Create VRRP sync-group"
+msgstr ""
+
+#: ../../configexamples/ha.rst:267
+msgid ""
+"The sync group is used to replicate connection tracking. It needs to be "
+"assigned to a random VRRP group, and we are creating a sync group called "
+"``sync`` using the vrrp group ``int``."
+msgstr ""
+
+#: ../../configexamples/ha.rst:276 ../../configexamples/ha.rst:337
+msgid "Testing"
+msgstr ""
+
+#: ../../configexamples/ha.rst:278
+msgid ""
+"At this point, you should be able to see both IP addresses when you run "
+"``show interfaces``\\ , and ``show vrrp`` should show both interfaces in "
+"MASTER state (and SLAVE state on router2)."
+msgstr ""
+
+#: ../../configexamples/ha.rst:292
+msgid "You should be able to ping to and from all the IPs you have allocated."
+msgstr ""
+
+#: ../../configexamples/ha.rst:295
+msgid "NAT and conntrack-sync"
+msgstr ""
+
+#: ../../configexamples/ha.rst:297
+msgid ""
+"Masquerade Traffic originating from 10.200.201.0/24 that is heading out "
+"the public interface."
+msgstr ""
+
+#: ../../configexamples/ha.rst:300
+msgid ""
+"We explicitly exclude the primary upstream network so that BGP or OSPF "
+"traffic doesn't accidentally get NAT'ed."
+msgstr ""
+
+#: ../../configexamples/ha.rst:312
+msgid "Configure conntrack-sync and enable helpers"
+msgstr ""
+
+#: ../../configexamples/ha.rst:314
+msgid ""
+"Conntrack helper modules are enabled by default, but they tend to cause "
+"more problems than they're worth in complex networks. You can disable all"
+" of them at one go."
+msgstr ""
+
+#: ../../configexamples/ha.rst:322
+msgid ""
+"Now enable replication between nodes. Replace eth0.201 with bond0.201 on "
+"the hardware router."
+msgstr ""
+
+#: ../../configexamples/ha.rst:339
+msgid ""
+"The simplest way to test is to look at the connection tracking stats on "
+"the standby hardware router with the command ``show conntrack-sync "
+"statistics``. The numbers should be very close to the numbers on the "
+"primary router."
+msgstr ""
+
+#: ../../configexamples/ha.rst:343
+msgid ""
+"When you have both routers up, you should be able to establish a "
+"connection from a NAT'ed machine out to the internet, reboot the active "
+"machine, and that connection should be preserved, and will not drop out."
+msgstr ""
+
+#: ../../configexamples/ha.rst:348
+msgid "OSPF Over WireGuard"
+msgstr ""
+
+#: ../../configexamples/ha.rst:350
+msgid ""
+"Wireguard doesn't have the concept of an up or down link, due to its "
+"design. This complicates AND simplifies using it for network transport, "
+"as for reliable state detection you need to use SOMETHING to detect when "
+"the link is down."
+msgstr ""
+
+#: ../../configexamples/ha.rst:354
+msgid ""
+"If you use a routing protocol itself, you solve two problems at once. "
+"This is only a basic example, and is provided as a starting point."
+msgstr ""
+
+#: ../../configexamples/ha.rst:358
+msgid "Configure Wireguard"
+msgstr ""
+
+#: ../../configexamples/ha.rst:360
+msgid ""
+"There is plenty of instructions and documentation on setting up "
+"Wireguard. The only important thing you need to remember is to only use "
+"one WireGuard interface per OSPF connection."
+msgstr ""
+
+#: ../../configexamples/ha.rst:364
+msgid "We use small /30's from 10.254.60/24 for the point-to-point links."
+msgstr ""
+
+#: ../../configexamples/ha.rst:368
+msgid "Replace the 203.0.113.3 with whatever the other router's IP address is."
+msgstr ""
+
+#: ../../configexamples/ha.rst:389
+msgid "**offsite1**"
+msgstr ""
+
+#: ../../configexamples/ha.rst:391
+msgid "This is connecting back to the STATIC IP of router1, not the floating."
+msgstr ""
+
+#: ../../configexamples/ha.rst:412
+msgid "Test WireGuard"
+msgstr ""
+
+#: ../../configexamples/ha.rst:414
+msgid "Make sure you can ping 10.254.60.1 and .2 from both routers."
+msgstr ""
+
+#: ../../configexamples/ha.rst:417
+msgid "Create Export Filter"
+msgstr ""
+
+#: ../../configexamples/ha.rst:419
+msgid ""
+"We only want to export the networks we know. Always do a whitelist on "
+"your route filters, both importing and exporting. A good rule of thumb is"
+" **'If you are not the default router for a network, don't advertise "
+"it'**. This means we explicitly do not want to advertise the 192.0.2.0/24"
+" network (but do want to advertise 10.200.201.0 and 203.0.113.0, which we"
+" ARE the default route for). This filter is applied to ``redistribute "
+"connected``. If we WERE to advertise it, the remote machines would see "
+"192.0.2.21 available via their default route, establish the connection, "
+"and then OSPF would say '192.0.2.0/24 is available via this tunnel', at "
+"which point the tunnel would break, OSPF would drop the routes, and then "
+"192.0.2.0/24 would be reachable via default again. This is called "
+"'flapping'."
+msgstr ""
+
+#: ../../configexamples/ha.rst:448
+msgid "Create Import Filter"
+msgstr ""
+
+#: ../../configexamples/ha.rst:450
+msgid ""
+"We only want to import networks we know. Our OSPF peer should only be "
+"advertising networks in the 10.201.0.0/16 range. Note that this is an "
+"INVERSE MATCH. You deny in access-list 100 to accept the route."
+msgstr ""
+
+#: ../../configexamples/ha.rst:470
+msgid "Enable OSPF"
+msgstr ""
+
+#: ../../configexamples/ha.rst:472
+msgid ""
+"Every router **must** have a unique router-id. The 'reference-bandwidth' "
+"is used because when OSPF was originally designed, the idea of a link "
+"faster than 1gbit was unheard of, and it does not scale correctly."
+msgstr ""
+
+#: ../../configexamples/ha.rst:489
+msgid "Test OSPF"
+msgstr ""
+
+#: ../../configexamples/ha.rst:491
+msgid ""
+"When you have enabled OSPF on both routers, you should be able to see "
+"each other with the command ``show ip ospf neighbour``. The state must be"
+" 'Full' or '2-Way'. If it is not, then there is a network connectivity "
+"issue between the hosts. This is often caused by NAT or MTU issues. You "
+"should not see any new routes (unless this is the second pass) in the "
+"output of ``show ip route``"
+msgstr ""
+
+#: ../../configexamples/ha.rst:498
+msgid "Advertise connected routes"
+msgstr ""
+
+#: ../../configexamples/ha.rst:500
+msgid ""
+"As a reminder, only advertise routes that you are the default router for."
+" This is why we are NOT announcing the 192.0.2.0/24 network, because if "
+"that was announced into OSPF, the other routers would try to connect to "
+"that network over a tunnel that connects to that network!"
+msgstr ""
+
+#: ../../configexamples/ha.rst:511
+msgid "You should now be able to see the advertised network on the other host."
+msgstr ""
+
+#: ../../configexamples/ha.rst:514
+msgid "Duplicate configuration"
+msgstr ""
+
+#: ../../configexamples/ha.rst:516
+msgid ""
+"At this point, you now need to create the X link between all four "
+"routers. Use amdifferent /30 for each link."
+msgstr ""
+
+#: ../../configexamples/ha.rst:520
+msgid "Priorities"
+msgstr ""
+
+#: ../../configexamples/ha.rst:522
+msgid ""
+"Set the cost on the secondary links to be 200. This means that they will "
+"not be used unless the primary links are down."
+msgstr ""
+
+#: ../../configexamples/ha.rst:531
+msgid "This will be visible in 'show ip route'."
+msgstr ""
+
+#: ../../configexamples/ha.rst:534
+msgid "BGP"
+msgstr ""
+
+#: ../../configexamples/ha.rst:536
+msgid "BGP is an extremely complex network protocol. An example is provided here."
+msgstr ""
+
+#: ../../configexamples/ha.rst:538
+msgid "Router id's must be unique."
+msgstr ""
+
+#: ../../configexamples/ha.rst:543
+msgid ""
+"The ``redistribute ospf`` command is there purely as an example of how "
+"this can be expanded. In this walkthrough, it will be filtered by BGPOUT "
+"rule 10000, as it is not 203.0.113.0/24."
+msgstr ""
+
+#: ../../configexamples/ha.rst:583
+msgid ""
+"This is identical, but you use the BGPPREPENDOUT route-map to advertise "
+"the route with a longer path."
+msgstr ""
+
+#: ../../configexamples/index.rst:4
+msgid "Configuration Blueprints"
+msgstr ""
+
+#: ../../configexamples/index.rst:6
+msgid "This chapter contains various configuration examples:"
+msgstr ""
+
+#: ../../configexamples/index.rst:24
+msgid "Configuration Blueprints (autotest)"
+msgstr ""
+
+#: ../../configexamples/index.rst:26
+msgid "The next pages contains automatic full tested configuration examples."
+msgstr ""
+
+#: ../../configexamples/index.rst:28
+msgid ""
+"Each lab will build an test from an external script. The page content "
+"will generate, so changes will not take an effect."
+msgstr ""
+
+#: ../../configexamples/index.rst:31
+msgid ""
+"A host ``vyos-oobm`` will use as a ssh proxy. This host is just necessary"
+" for the Lab test."
+msgstr ""
+
+#: ../../configexamples/index.rst:34
+msgid "The process will do the following steps:"
+msgstr ""
+
+#: ../../configexamples/index.rst:36
+msgid "create the lab on a eve-ng server"
+msgstr ""
+
+#: ../../configexamples/index.rst:37
+msgid "configure each host in the lab"
+msgstr ""
+
+#: ../../configexamples/index.rst:38
+msgid "do some defined tests"
+msgstr ""
+
+#: ../../configexamples/index.rst:39
+msgid "optional do an upgrade to a higher version and do step 3 again."
+msgstr ""
+
+#: ../../configexamples/index.rst:40
+msgid "generate the documentation and include files"
+msgstr ""
+
+#: ../../configexamples/index.rst:41
+msgid "shutdown and destroy the lab, if there is no error"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:3
+msgid "Inter-VRF Routing over VRF Lite"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:5
+msgid ""
+"**Virtual Routing and Forwarding** is a technology that allow multiple "
+"instance of a routing table to exist within a single device. One of the "
+"key aspect of **VRFs** is that do not share the same routes or "
+"interfaces, therefore packets are forwarded between interfaces that "
+"belong to the same VRF only."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:10
+msgid ""
+"Any information related to a VRF is not exchanged between devices -or in "
+"the same device- by default, this is a technique called **VRF-Lite**."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:13
+msgid ""
+"Keep networks isolated is -in general- a good principle, but there are "
+"cases where you might need that some network can access other in a "
+"different VRF."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:16
+msgid ""
+"The scope of this document is to cover such cases in a dynamic way "
+"without the use of MPLS-LDP."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:19
+msgid ""
+"General information about L3VPNs can be found in the "
+":ref:`configuration/vrf/index:L3VPN VRFs` chapter."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:23
+#: ../../configexamples/wan-load-balancing.rst:23
+#: ../../configexamples/wan-load-balancing.rst:75
+#: ../../configexamples/wan-load-balancing.rst:104
+#: ../../configexamples/wan-load-balancing.rst:135
+msgid "Overview"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:25
+msgid "Let’s say we have a requirement to have multiple networks."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:27
+msgid "LAN 1"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:28
+msgid "LAN 2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:29
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:91
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:106
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:727
+msgid "Management"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:30
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:108
+msgid "Internet"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:32
+msgid ""
+"Both LANs have to be able to route between each other, both will have "
+"managed devices through a dedicated management network and both will need"
+" Internet access yet the LAN2 will need access to some set of outside "
+"networks, not all. The management network will need access to both LANs "
+"but cannot have access to/from the outside."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:38
+msgid ""
+"This scenario could be a nightmare applying regular routing and might "
+"need filtering in multiple interfaces."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:41
+msgid ""
+"A simple solution could be using different routing tables, or VRFs for "
+"all the networks so we can keep the routing restrictions. But for us to "
+"route between the different VRFs we would need a cable or a logical "
+"connection between each other:"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:46
+msgid "One cable/logical connection between LAN1 and LAN2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:47
+msgid "One cable/logical connection between LAN1 and Internet"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:48
+msgid "One cable/logical connection between LAN2 and Internet"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:49
+msgid "One cable/logical connection between LAN1 and Management"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:50
+msgid "One cable/logical connection between LAN2 and Management"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:52
+msgid "As we can see this is unpractical."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:54
+msgid ""
+"To address this scenario we will use to our advantage an extension of the"
+" BGP routing protocol that will help us in the “Export” between VRFs "
+"without the need for MPLS."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:58
+msgid ""
+"MP-BGP or MultiProtocol BGP introduces two main concepts to solve this "
+"limitation: - Route Distinguisher (RD): Is used to distinguish between "
+"different VRFs –called VPNs- inside the BGP Process. The RD is appended "
+"to each IPv4 Network that is advertised into BGP for that VPN making it a"
+" unique VPNv4 route. - Route Target (RT): This is an extended BGP "
+"community append to the VPNv4 route in the Import/Export process. When a "
+"route passes from the VRF routing table into the BGP process it will add "
+"the configured export extended community(ies) for that VPN. When that "
+"route needs to go from BGP into the VRF routing table will only pass if "
+"that given VPN import policy matches any of the appended community(ies) "
+"into that prefix."
+msgstr ""
+
+msgid "Network Topology Diagram"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:82
+msgid "IP Schema"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
+msgid "Device-A"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
+msgid "Device-B"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
+msgid "IPv4 Network"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
+msgid "IPv6 Network"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:87
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:89
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:91
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:93
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:616
+msgid "Core"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:87
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:102
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:701
+msgid "LAN1"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:87
+msgid "10.1.1.0/30"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:87
+msgid "2001:db8::/127"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:89
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:104
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:713
+msgid "LAN2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:89
+msgid "172.16.2.0/30"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:89
+msgid "2001:db8::2/127"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:91
+msgid "192.168.3.0/30"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:91
+msgid "2001:db8::4/127"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:93
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:739
+msgid "ISP"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:93
+msgid "10.2.2.0/30"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:93
+msgid "2001:db8::6/127"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:97
+msgid "RD & RT Schema"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:100
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "VRF"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:100
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "RD"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:100
+msgid "RT"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:102
+msgid "64496:1"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:104
+msgid "64496:2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:106
+msgid "64496:50"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:108
+msgid "64496:100"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:113
+#: ../../configexamples/pppoe-ipv6-basic.rst:26
+msgid "Configurations"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:115
+msgid ""
+"We use a static route configuration in between the Core and each LAN and "
+"Management router, and BGP between the Core router and the ISP router but"
+" any dynamic routing protocol can be used."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:120
+msgid "Remote Networks"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:122
+msgid ""
+"The following template configuration can be used in each remote router "
+"based in our topology."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:134
+msgid "Core Router"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:137
+msgid "Step 1: VRF and Configurations to remote networks"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:143
+msgid ""
+"Set the VRF name and Table ID, set interface address and bind it to the "
+"VRF. Last add the static route to the remote network."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:160
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:248
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:320
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:829
+msgid "Verification"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:164
+msgid ""
+"Checking the routing table of the VRF should reveal both static and "
+"connected entries active. A PING test between the Core and remote router "
+"is a way to validate connectivity within the VRF."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:228
+msgid "Step 2: BGP Configuration for VRF-Lite"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:235
+msgid ""
+"Setting BGP global local-as as well inside the VRF. Redistribute static "
+"routes to inject configured networks into the BGP process but still "
+"inside the VRF."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:252
+msgid ""
+"Check the BGP VRF table and verify if the static routes are injected "
+"showing the correct next-hop information."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:287
+msgid "Step 3: VPN Configuration"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:293
+msgid ""
+"Within the VRF we set the Route-Distinguisher (RD) and Route-Targets "
+"(RT), then we enable the export/import VPN."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:312
+msgid ""
+"A key point to understand is that if we need two VRFs to communicate "
+"between each other EXPORT rt from VRF1 has to be in the IMPORT rt list "
+"from VRF2. But this is only in ONE direction, to complete the "
+"communication the EXPORT rt from VRF2 has to be in the IMPORT rt list "
+"from VRF1."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:317
+msgid ""
+"There are some cases where this is not needed -for example, in some DDoS "
+"appliance- but most inter-vrf routing designs use the above "
+"configurations."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:324
+msgid ""
+"After configured all the VRFs involved in this topology we take a deeper "
+"look at both BGP and Routing table for the VRF LAN1"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:417
+msgid ""
+"As we can see in the BGP table any imported route has been injected with "
+"a \"@\" followed by the VPN id; In the routing table of the VRF, if the "
+"route was installed, we can see -between round brackets- the exported VRF"
+" table."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:422
+msgid "Step 4: End to End verification"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:425
+msgid "Now we perform some end-to-end testing"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:427
+msgid "From Management to LAN1/LAN2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:469
+msgid "From Management to Outside (fails as intended)"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:520
+msgid "LAN1 to Outside"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:571
+msgid ""
+"we are using \"source-address\" option cause we are not redistributing "
+"connected interfaces into BGP on the Core router hence there is no "
+"comeback route and ping will fail."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:575
+msgid "LAN1 to LAN2"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:601
+msgid "Conclusions"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:603
+msgid ""
+"Inter-VRF routing is a well-known solution to address complex routing "
+"scenarios that enable -in a dynamic way- to leak routes between VRFs. Is "
+"recommended to take special consideration while designing route-targets "
+"and its application as it can minimize future interventions while "
+"creating a new VRF will automatically take the desired effect in its "
+"propagation."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:611
+msgid "Appendix-A"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:614
+msgid "Full configuration from all devices"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:764
+msgid "Appendix-B"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:767
+msgid "Route-Filtering"
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:770
+msgid ""
+"When importing routes using MP-BGP it is possible to filter a subset of "
+"them before are injected in the BGP table. One of the most common case is"
+" to use a route-map with an prefix-list."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:778
+msgid "We create a prefix-list first and add all the routes we need to."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:803
+msgid ""
+"Then add a route-map and reference to above prefix. Consider that the "
+"actions taken inside the prefix will MATCH the routes that will be "
+"affected by the actions inside the rules of the route-map."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:815
+msgid ""
+"We are using a \"white list\" approach by allowing only what is "
+"necessary. In case that need to implement a \"black list\" approach then "
+"you will need to change the action in the route-map for a deny BUT you "
+"need to add a rule that permits the rest due to the implicit deny in the "
+"route-map."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:820
+msgid ""
+"Then we need to attach the policy to the BGP process. This needs to be "
+"under the import statement in the vrf we need to filter."
+msgstr ""
+
+#: ../../configexamples/inter-vrf-routing-vrf-lite.rst:853
+msgid ""
+"As we can see even if both VRF LAN1 and LAN2 has the same import RTs we "
+"are able to select which routes are effectively imported and installed."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:4
+msgid "L3VPN for Hub-and-Spoke connectivity with VyOS"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:6
+msgid ""
+"IP/MPLS technology is widely used by various service providers and large "
+"enterprises in order to achieve better network scalability, manageability"
+" and flexibility. It also provides the possibility to deliver different "
+"services for the customers in a seamless manner. Layer 3 VPN (L3VPN) is a"
+" type of VPN mode that is built and delivered through OSI layer 3 "
+"networking technologies. Often the border gateway protocol (BGP) is used "
+"to send and receive VPN-related data that is responsible for the control "
+"plane. L3VPN utilizes virtual routing and forwarding (VRF) techniques to "
+"receive and deliver user data as well as separate data planes of the end-"
+"users. It is built using a combination of IP- and MPLS-based information."
+" Generally, L3VPNs are used to send data on back-end VPN infrastructures,"
+" such as for VPN connections between data centres, HQs and branches."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:20
+msgid ""
+"An L3VPN consists of multiple access links, multiple VPN routing and "
+"forwarding (VRF) tables, and multiple MPLS paths or multiple P2MP LSPs. "
+"An L3VPN can be configured to connect two or more customer sites. In hub-"
+"and-spoke MPLS L3VPN environments, the spoke routers need to have unique "
+"Route Distinguishers (RDs). In order to use the hub site as a transit "
+"point for connectivity in such an environment, the spoke sites export "
+"their routes to the hub. Spokes can talk to hubs, but never have direct "
+"paths to other spokes. All traffic between spokes is controlled and "
+"delivered over the hub site."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:31
+msgid ""
+"To deploy a Layer3 VPN with MPLS on VyOS, we should meet a couple "
+"requirements in order to properly implement the solution. We'll use the "
+"following nodes in our LAB environment:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:35
+msgid "2 x Route reflectors (VyOS-RRx)"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:36
+msgid "4 x Provider routers (VyOS-Px)"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:37
+msgid "3 x Provider Edge (VyOs-PEx)"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:38
+msgid "3 x Customer Edge (VyOS-CEx)"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:40
+msgid "The following software was used in the creation of this document:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:42
+msgid "Operating system: VyOS"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:43
+msgid "Version: 1.4-rolling-202110310317"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:44
+msgid "Image name: vyos-1.4-rolling-202110310317-amd64.iso"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:46
+msgid ""
+"**NOTE:** VyOS Router (tested with VyOS 1.4-rolling-202110310317) –  The "
+"configurations below are specifically for VyOS 1.4.x."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:49
+msgid ""
+"General information can be found in the "
+":ref:`configuration/vrf/index:L3VPN VRFs` chapter."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:65
+msgid "How does it work?"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:67
+msgid ""
+"As we know the main assumption of L3VPN “Hub and Spoke” is, that the "
+"traffic between spokes have to pass via hub, in our scenario VyOS-PE2 is "
+"the Hub PE and the VyOS-CE1-HUB is the central customer office device "
+"that is responsible for controlling access between all spokes and "
+"announcing its network prefixes (10.0.0.100/32). VyOS-PE2 has the main "
+"VRF (its name is BLUE_HUB), its own Route-Distinguisher(RD) and route-"
+"target import/export lists. Multiprotocol-BGP(MP-BGP) delivers L3VPN "
+"related control-plane information to the nodes across network where PEs "
+"Spokes import the route-target 60535:1030 (this is export route-target of"
+" vrf BLUE_HUB) and export its own route-target 60535:1011(this is vrf "
+"BLUE_SPOKE export route-target). Therefore, the Customer edge nodes can "
+"only learn the network prefixes of the HUB site [10.0.0.100/32]. For this"
+" example VyOS-CE1 has network prefixes [10.0.0.80/32] / VyOS-CE2 has "
+"network prefixes [10.0.0.90/32]. Route-Reflector devices VyOS-RR1 and "
+"VyOS-RR2 are used to simplify network routes exchange and minimize iBGP "
+"peerings between devices."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:83
+msgid "L3VPN configuration parameters table:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "Node"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "Role"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "RT import"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:86
+msgid "RT export"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+msgid "VyOS-PE2"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+msgid "Hub"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+msgid "BLUE_HUB"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+msgid "10.80.80.1:1011"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+msgid "65035:1011 65035:1030"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:88
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "65035:1030"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+msgid "VyOS-PE1"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "Spoke"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "BLUE_SPOKE"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+msgid "10.50.50.1:1011"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:91
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "65035:1011"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "VyOS-PE3"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:93
+msgid "10.60.60.1:1011"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:105
+msgid "Step-1: Configuring IGP and enabling MPLS LDP"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:107
+msgid ""
+"At the first step we need to configure the IP/MPLS backbone network using"
+" OSPF as IGP protocol and LDP as label-switching protocol for the base "
+"connectivity between **P** (rovider), **P** (rovider) **E** (dge) and "
+"**R** (oute) **R** (eflector) nodes:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:112
+msgid "VyOS-P1:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:142
+msgid "VyOS-P2:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:168
+msgid "VyOS-P3:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:194
+msgid "VyOS-P4:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:224
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:362
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:413
+msgid "VyOS-PE1:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:241
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:376
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:435
+msgid "VyOS-PE2:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:262
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:390
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:457
+msgid "VyOS-PE3:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:279
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:328
+msgid "VyOS-RR1:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:299
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:345
+msgid "VyOS-RR2:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:322
+msgid "Step-2: Configuring iBGP for L3VPN control-plane"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:324
+msgid ""
+"At this step we are going to enable iBGP protocol on MPLS nodes and Route"
+" Reflectors (two routers for redundancy) that will deliver IPv4 VPN "
+"(L3VPN) routes between them:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:407
+msgid "Step-3: Configuring L3VPN VRFs on PE nodes"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:409
+msgid ""
+"This section provides configuration steps for setting up VRFs on our PE "
+"nodes including CE facing interfaces, BGP, rd and route-target "
+"import/export based on the pre-defined parameters."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:482
+msgid "Step-4: Configuring CE nodes"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:484
+msgid ""
+"Dynamic routing used between CE and PE nodes and eBGP peering established"
+" for the route exchanging between them. All routes received by PEs are "
+"then exported to L3VPN and delivered from Spoke sites to Hub and vise-"
+"versa based on previously configured L3VPN parameters."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:490
+msgid "VyOS-CE1-SPOKE:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:507
+msgid "VyOS-CE1-HUB:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:525
+msgid "VyOS-CE2-SPOKE:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:545
+msgid "Step-5: Verification"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:547
+msgid ""
+"This section describes verification commands for MPLS/BGP/LDP protocols "
+"and L3VPN related routes as well as diagnosis and reachability checks "
+"between CE nodes."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:551
+msgid ""
+"Let’s check IPv4 routing and MPLS information on provider nodes (same "
+"procedure for all P nodes):"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:554
+msgid "“show ip ospf neighbor” for checking ospf relationship"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:567
+msgid "“show mpls ldp neighbor “ for checking ldp neighbors"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:579
+msgid "“show mpls ldp binding” for checking mpls label assignment"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:636
+msgid ""
+"Now we’re checking iBGP status and routes from route-reflector nodes to "
+"other devices:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:639
+msgid "“show bgp ipv4 vpn summary” for checking BGP VPNv4 neighbors:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:658
+msgid "“show bgp ipv4 vpn”  for checking all VPNv4 prefixes information:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:698
+msgid ""
+"“show bgp ipv4 vpn x.x.x.x/x” for checking best path selected for "
+"specific VPNv4 destination"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:716
+msgid ""
+"Also we can verify how PE devices receives VPNv4 networks from the RRs "
+"and installing them to the specific customer VRFs:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:719
+msgid ""
+"“show bgp ipv4 vpn summary” for checking iBGP neighbors against route-"
+"reflector devices:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:736
+msgid "“show bgp vrf all” for checking all the prefix learning on BGP"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:736
+msgid "within VRFs:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:764
+msgid "“show bgp vrf BLUE_SPOKE summary” for checking EBGP neighbor"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:764
+msgid "information between PE and CE:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:784
+msgid "“show ip route vrf BLUE_SPOKE” for viewing the RIB in our Spoke PE."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:783
+msgid ""
+"Using this command we are also able to check the transport and customer "
+"label (inner/outer) for Hub network prefix (10.0.0.100/32):"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:807
+msgid "“show bgp ipv4 vpn x.x.x.x/32” for checking the best-path to the"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:806
+msgid ""
+"specific VPNv4 destination including extended community and remotelabel "
+"information. This procedure is the same on all Spoke nodes:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:831
+msgid "Now, let’s check routing information on out Hub PE:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:834
+msgid "“show bgp ipv4 vpn summary” for checking iBGP neighbors again"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:834
+msgid "VyOS-RR1/RR2"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:851
+msgid "“show bgp vrf all” for checking all the prefixes learning on BGP"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:891
+msgid "“show bgp vrf BLUE_HUB summary” for checking EBGP neighbor"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:891
+msgid "CE Hub device"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:909
+msgid "“show ip route vrf BLUE_HUB” to view the RIB in our Hub PE."
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:907
+msgid ""
+"With this command we are able to check the transport and customer label "
+"(inner/outer) for network spokes prefixes 10.0.0.80/32 - 10.0.0.90/32"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:941
+msgid "“show bgp ipv4 vpn x.x.x.x/32” for checking best-path,"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:941
+msgid "extended community and remote label of specific destination"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:985
+msgid "Finally, let’s check the reachability between CEs:"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:987
+msgid "VyOS-CE1-SPOKE ----->   VyOS-CE-HUB"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:1025
+msgid "VyOS-CE-HUB -------> VyOS-CE1-SPOKE"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:1026
+msgid "VyOS-CE-HUB -------> VyOS-CE2-SPOKE"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:1085
+msgid "VyOS-CE2-SPOKE ------->  VyOS-CE-HUB"
+msgstr ""
+
+#: ../../configexamples/l3vpn-hub-and-spoke.rst:1123
+msgid ""
+"**Note:** At the moment, trace mpls doesn’t show labels/paths. So we’ll "
+"see * * *  for the transit routers of the mpls backbone."
+msgstr ""
+
+#: ../../configexamples/ospf-unnumbered.rst:7
+msgid "OSPF unnumbered with ECMP"
+msgstr ""
+
+#: ../../configexamples/ospf-unnumbered.rst:9
+msgid "General information can be found in the :ref:`routing-ospf` chapter."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:7
+msgid "PPPoE IPv6 Basic Setup for Home Network"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:9
+msgid ""
+"This document is to describe a basic setup using PPPoE with DHCPv6-PD + "
+"SLAAC to construct a typical home network. The user can follow the steps "
+"described here to quickly setup a working network and use this as a "
+"starting point to further configure or fine-tune other settings."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:14
+msgid ""
+"To achieve this, your ISP is required to support DHCPv6-PD. If you're not"
+" sure, please contact your ISP for more information."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:18
+msgid "Network Topology"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:29
+msgid "PPPoE Setup"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:38
+msgid "Fill ``password`` and ``user`` with the credential provided by your ISP."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:39
+msgid "``service-name`` can be an arbitrary string."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:42
+msgid "DHCPv6-PD Setup"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:44
+msgid ""
+"During address configuration, in addition to assigning an address to the "
+"WAN interface, ISP also provides a prefix to allow the router to "
+"configure addresses of LAN interface and other nodes connecting to LAN, "
+"which is called prefix delegation (PD)."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:54
+msgid ""
+"Here we use the prefix to configure the address of eth1 (LAN) to form "
+"``<prefix>::64``, where ``64`` is hexadecimal of address 100."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:56
+msgid ""
+"For home network users, most of time ISP only provides /64 prefix, hence "
+"there is no need to set SLA ID and prefix length. See :ref:`pppoe-"
+"interface` for more information."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:61
+msgid "Router Advertisement"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:63
+msgid ""
+"We need to enable router advertisement for LAN network so that PC can "
+"receive the prefix and use SLAAC to configure the address automatically."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:72
+msgid "Set MTU in advertisement to 1492 because of PPPoE header overhead."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:73
+msgid ""
+"Set DNS server address in the advertisement so that clients can obtain it"
+" by using RDNSS option. Most operating systems (Windows, Linux, Mac) "
+"should already support it."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:76
+msgid ""
+"Here we set the prefix to ``::/64`` to indicate advertising any /64 "
+"prefix the LAN interface is assigned."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:78
+msgid ""
+"Since some ISPs disconnects continuous connection for every 2~3 days, we "
+"set ``valid-lifetime`` to 2 days to allow PC for phasing out old address."
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:82
+msgid "Basic Firewall"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:84
+msgid ""
+"To have basic protection while keeping IPv6 network functional, we need "
+"to:"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:86
+msgid "Allow all established and related traffic for router and LAN"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:87
+msgid "Allow all icmpv6 packets for router and LAN"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:88
+msgid "Allow DHCPv6 packets for router"
+msgstr ""
+
+#: ../../configexamples/pppoe-ipv6-basic.rst:111
+msgid ""
+"Note to allow the router to receive DHCPv6 response from ISP. We need to "
+"allow packets with source port 547 (server) and destination port 546 "
+"(client)."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:8
+msgid "WAN Load Balancer examples"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:12
+msgid "Example 1: Distributing load evenly"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:14
+msgid "The setup used in this example is shown in the following diagram:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:24
+msgid ""
+"All traffic coming in through eth2 is balanced between eth0 and eth1 on "
+"the router."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:26
+msgid ""
+"Pings will be sent to four targets for health testing (33.44.55.66, "
+"44.55.66.77, 55.66.77.88 and 66.77.88.99)."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:28
+msgid ""
+"All outgoing packets are assigned the source address of the assigned "
+"interface (SNAT)."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:30
+msgid ""
+"eth0 is set to be removed from the load balancer's interface pool after 5"
+" ping failures, eth1 will be removed after 4 ping failures."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:34
+msgid "Create static routes to ping targets"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:35
+msgid ""
+"Create static routes through the two ISPs towards the ping targets and "
+"commit the changes:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:46
+msgid "Configure the load balancer"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:47
+msgid "Configure the WAN load balancer with the parameters described above:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:68
+msgid "Example 2: Failover based on interface weights"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:70
+msgid "This example uses the failover mode."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:76
+msgid ""
+"In this example, eth0 is the primary interface and eth1 is the secondary "
+"interface. To provide simple failover functionality. If eth0 fails, eth1 "
+"takes over."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:81
+msgid "Create interface weight based configuration"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:82
+msgid ""
+"The configuration steps are the same as in the previous example, except "
+"rule 10. So we keep the configuration, remove rule 10 and add a new rule "
+"for the failover mode:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:95
+msgid "Example 3: Failover based on rule order"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:97
+msgid ""
+"The previous example used the failover command to send traffic through "
+"eth1 if eth0 fails. In this example, failover functionality is provided "
+"by rule order."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:105
+msgid ""
+"Two rules will be created, the first rule directs traffic coming in from "
+"eth2 to eth0 and the second rule directs the traffic to eth1. If eth0 "
+"fails the first rule is bypassed and the second rule matches, directing "
+"traffic to eth1."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:111
+msgid "Create rule order based configuration"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:112
+msgid ""
+"We keep the configuration from the previous example, delete rule 10 and "
+"create the two new rules as described:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:124
+msgid "Example 4: Failover based on rule order - priority traffic"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:126
+#: ../../configexamples/wan-load-balancing.rst:136
+msgid ""
+"A rule order for prioritizing traffic is useful in scenarios where the "
+"secondary link has a lower speed and should only carry high priority "
+"traffic. It is assumed for this example that eth1 is connected to a "
+"slower connection than eth0 and should prioritize VoIP traffic."
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:142
+msgid "Create rule order based configuration with low speed secondary link"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:143
+msgid ""
+"We keep the configuration from the previous example, delete rule 20 and "
+"create a new rule as described:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:156
+msgid "Example 5: Exclude traffic from load balancing"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:158
+msgid ""
+"In this example two LAN interfaces exist in different subnets instead of "
+"one like in the previous examples:"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:167
+msgid "Adding a rule for the second interface"
+msgstr ""
+
+#: ../../configexamples/wan-load-balancing.rst:169
+msgid ""
+"Based on the previous example, another rule for traffic from the second "
+"interface eth3 can be added to the load balancer. However, traffic meant "
+"to flow between the LAN subnets will be sent to eth0 and eth1 as well. To"
+" prevent this, another rule is required. This rule excludes traffic "
+"between the local subnets from the load balancer. It also excludes "
+"locally-sources packets (required for web caching with load balancing). "
+"eth+ is used as an alias that refers to all ethernet interfaces:"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:6
+msgid "Zone-Policy example"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:8
+msgid ""
+"In :vytask:`T2199` the syntax of the zone configuration was changed. The "
+"zone configuration moved from ``zone-policy zone <name>`` to ``firewall "
+"zone <name>``."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:13
+msgid "Native IPv4 and IPv6"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:15
+msgid "We have three networks."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:24
+msgid ""
+"**This specific example is for a router on a stick, but is very easily "
+"adapted for however many NICs you have**:"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:28
+msgid "Internet - 192.168.200.100 - TCP/80"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:29
+msgid "Internet - 192.168.200.100 - TCP/443"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:30
+msgid "Internet - 192.168.200.100 - TCP/25"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:31
+msgid "Internet - 192.168.200.100 - TCP/53"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:32
+msgid "VyOS acts as DHCP, DNS forwarder, NAT, router and firewall."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:33
+msgid ""
+"192.168.200.200/2001:0DB8:0:BBBB::200 is an internal/external DNS, web "
+"and mail (SMTP/IMAP) server."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:35
+msgid ""
+"192.168.100.10/2001:0DB8:0:AAAA::10 is the administrator's console. It "
+"can SSH to VyOS."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:37
+msgid "LAN and DMZ hosts have basic outbound access: Web, FTP, SSH."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:38
+msgid "LAN can access DMZ resources."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:39
+msgid "DMZ cannot access LAN resources."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:40
+msgid "Inbound WAN connect to DMZ host."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:47
+msgid ""
+"The VyOS interface is assigned the .1/:1 address of their respective "
+"networks. WAN is on VLAN 10, LAN on VLAN 20, and DMZ on VLAN 30."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:50
+msgid "It will look something like this:"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:79
+msgid "Zones Basics"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:81
+msgid ""
+"Each interface is assigned to a zone. The interface can be physical or "
+"virtual such as tunnels (VPN, PPTP, GRE, etc) and are treated exactly the"
+" same."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:85
+msgid ""
+"Traffic flows from zone A to zone B. That flow is what I refer to as a "
+"zone-pair-direction. eg. A->B and B->A are two zone-pair-destinations."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:88
+msgid "Ruleset are created per zone-pair-direction."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:90
+msgid ""
+"I name rule sets to indicate which zone-pair-direction they represent. "
+"eg. ZoneA-ZoneB or ZoneB-ZoneA. LAN-DMZ, DMZ-LAN."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:93
+msgid ""
+"In VyOS, you have to have unique Ruleset names. In the event of overlap, "
+"I add a \"-6\" to the end of v6 rulesets. eg. LAN-DMZ, LAN-DMZ-6. This "
+"allows for each auto-completion and uniqueness."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:97
+msgid ""
+"In this example we have 4 zones. LAN, WAN, DMZ, Local. The local zone is "
+"the firewall itself."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:100
+msgid ""
+"If your computer is on the LAN and you need to SSH into your VyOS box, "
+"you would need a rule to allow it in the LAN-Local ruleset. If you want "
+"to access a webpage from your VyOS box, you need a rule to allow it in "
+"the Local-LAN ruleset."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:105
+msgid ""
+"In rules, it is good to keep them named consistently. As the number of "
+"rules you have grows, the more consistency you have, the easier your life"
+" will be."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:123
+msgid ""
+"The first two rules are to deal with the idiosyncrasies of VyOS and "
+"iptables."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:126
+msgid ""
+"Zones and Rulesets both have a default action statement. When using Zone-"
+"Policies, the default action is set by the zone-policy statement and is "
+"represented by rule 10000."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:130
+msgid ""
+"It is good practice to log both accepted and denied traffic. It can save "
+"you significant headaches when trying to troubleshoot a connectivity "
+"issue."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:134
+msgid "To add logging to the default rule, do:"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:141
+msgid ""
+"By default, iptables does not allow traffic for established sessions to "
+"return, so you must explicitly allow this. I do this by adding two rules "
+"to every ruleset. 1 allows established and related state packets through "
+"and rule 2 drops and logs invalid state packets. We place the "
+"established/related rule at the top because the vast majority of traffic "
+"on a network is established and the invalid rule to prevent invalid state"
+" packets from mistakenly being matched against other rules. Having the "
+"most matched rule listed first reduces CPU load in high volume "
+"environments. Note: I have filed a bug to have this added as a default "
+"action as well."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:152
+msgid ""
+"''It is important to note, that you do not want to add logging to the "
+"established state rule as you will be logging both the inbound and "
+"outbound packets for each session instead of just the initiation of the "
+"session. Your logs will be massive in a very short period of time.''"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:157
+msgid ""
+"In VyOS you must have the interfaces created before you can apply it to "
+"the zone and the rulesets must be created prior to applying it to a zone-"
+"policy."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:161
+msgid ""
+"I create/configure the interfaces first. Build out the rulesets for each "
+"zone-pair-direction which includes at least the three state rules. Then I"
+" setup the zone-policies."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:165
+msgid ""
+"Zones do not allow for a default action of accept; either drop or reject."
+" It is important to remember this because if you apply an interface to a "
+"zone and commit, any active connections will be dropped. Specifically, if"
+" you are SSH’d into VyOS and add local or the interface you are "
+"connecting through to a zone and do not have rulesets in place to allow "
+"SSH and established sessions, you will not be able to connect."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:172
+msgid ""
+"The following are the rules that were created for this example (may not "
+"be complete), both in IPv4 and IPv6. If there is no IP specified, then "
+"the source/destination address is not explicit."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:226
+msgid "Since we have 4 zones, we need to setup the following rulesets."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:243
+msgid ""
+"Even if the two zones will never communicate, it is a good idea to create"
+" the zone-pair-direction rulesets and set enable-default-log. This will "
+"allow you to log attempts to access the networks. Without it, you will "
+"never see the connection attempts."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:248
+msgid "This is an example of the three base rules."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:272
+msgid "Here is an example of an IPv6 DMZ-WAN ruleset."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:345
+msgid ""
+"Once you have all of your rulesets built, then you need to create your "
+"zone-policy."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:348
+msgid "Start by setting the interface and default action for each zone."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:355
+msgid ""
+"In this case, we are setting the v6 ruleset that represents traffic "
+"sourced from the LAN, destined for the DMZ. Because the zone-policy "
+"firewall syntax is a little awkward, I keep it straight by thinking of it"
+" backwards."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:364
+msgid ""
+"DMZ-LAN policy is LAN-DMZ. You can get a rhythm to it when you build out "
+"a bunch at one time."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:367
+msgid ""
+"In the end, you will end up with something like this config. I took out "
+"everything but the Firewall, Interfaces, and zone-policy sections. It is "
+"long enough as is."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:373
+msgid "IPv6 Tunnel"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:375
+msgid ""
+"If you are using a IPv6 tunnel from HE.net or someone else, the basis is "
+"the same except you have two WAN interfaces. One for v4 and one for v6."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:378
+msgid ""
+"You would have 5 zones instead of just 4 and you would configure your v6 "
+"ruleset between your tunnel interface and your LAN/DMZ zones instead of "
+"to the WAN."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:382
+msgid "LAN, WAN, DMZ, local and TUN (tunnel)"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:384
+msgid "v6 pairs would be:"
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:401
+msgid "Notice, none go to WAN since WAN wouldn't have a v6 address on it."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:403
+msgid ""
+"You would have to add a couple of rules on your wan-local ruleset to "
+"allow protocol 41 in."
+msgstr ""
+
+#: ../../configexamples/zone-policy.rst:406
+msgid "Something like:"
+msgstr ""
+

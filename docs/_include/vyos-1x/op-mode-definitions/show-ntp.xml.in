@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<interfaceDefinition>
+  <node name="show">
+    <children>
+      <node name="ntp">
+        <properties>
+          <help>Show peer status of NTP daemon</help>
+        </properties>
+        <command>${vyos_op_scripts_dir}/show_ntp.sh --basic</command>
+        <children>
+          <tagNode name="server">
+            <properties>
+              <help>Show date and time of specified NTP server</help>
+              <completionHelp>
+                <script>${vyos_completion_dir}/list_ntp_servers.sh</script>
+              </completionHelp>
+            </properties>
+            <command>${vyos_op_scripts_dir}/show_ntp.sh --server "$4"</command>
+          </tagNode>
+          <node name="info">
+            <properties>
+              <help>Show NTP operational summary</help>
+            </properties>
+            <command>${vyos_op_scripts_dir}/show_ntp.sh --info</command>
+          </node>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

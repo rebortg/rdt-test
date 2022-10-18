@@ -1,0 +1,210 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<interfaceDefinition>
+  <node name="reset">
+    <children>
+      <node name="vpn">
+        <properties>
+          <help>Reset Virtual Private Network (VPN) information</help>
+        </properties>
+        <children>
+          <tagNode name="ipsec-peer">
+            <properties>
+              <help>Reset all tunnels for given peer</help>
+              <completionHelp>
+                <path>vpn ipsec site-to-site peer</path>
+              </completionHelp>
+            </properties>
+            <children>
+              <tagNode name="tunnel">
+                <properties>
+                  <help>Reset a specific tunnel for given peer</help>
+                </properties>
+                <command>sudo ${vyos_op_scripts_dir}/ipsec.py reset_peer --peer="$4" --tunnel="$6"</command>
+              </tagNode>
+              <node name="vti">
+                <properties>
+                  <help>Reset the VTI tunnel for given peer</help>
+                </properties>
+                <command>sudo ${vyos_op_scripts_dir}/ipsec.py reset_peer --peer="$4" --tunnel="vti"</command>
+              </node>
+            </children>
+            <command>sudo ${vyos_op_scripts_dir}/ipsec.py reset_peer --peer="$4" --tunnel="all"</command>
+          </tagNode>
+          <tagNode name="ipsec-profile">
+            <properties>
+              <help>Reset all tunnels for given DMVPN profile</help>
+              <completionHelp>
+                <path>vpn ipsec profile</path>
+              </completionHelp>
+            </properties>
+            <children>
+              <tagNode name="tunnel">
+                <properties>
+                  <help>Reset a specific tunnel for given DMVPN profile</help>
+                </properties>
+                <command>sudo ${vyos_op_scripts_dir}/vpn_ipsec.py --action="reset-profile" --name="$4" --tunnel="$6"</command>
+              </tagNode>
+            </children>
+            <command>sudo ${vyos_op_scripts_dir}/vpn_ipsec.py --action="reset-profile" --name="$4" --tunnel="all"</command>
+          </tagNode>
+        </children>
+      </node>
+    </children>
+  </node>
+  <node name="restart">
+    <children>
+      <node name="vpn">
+        <properties>
+          <help>Restart the IPsec VPN process</help>
+        </properties>
+        <command>if pgrep charon >/dev/null ; then sudo ipsec restart ; sleep 3 ; sudo swanctl -q ; else echo "IPsec process not running" ; fi</command>
+      </node>
+    </children>
+  </node>
+  <node name="show">
+    <children>
+      <node name="vpn">
+        <properties>
+          <help>Show Virtual Private Network (VPN) information</help>
+        </properties>
+        <children>
+          <node name="debug">
+            <properties>
+              <help>Show VPN debugging information</help>
+            </properties>
+            <children>
+              <tagNode name="peer">
+                <properties>
+                  <help>Show debugging information for a peer</help>
+                  <completionHelp>
+                    <path>vpn ipsec site-to-site peer</path>
+                  </completionHelp>
+                </properties>
+                <children>
+                  <tagNode name="tunnel">
+                    <properties>
+                      <help>Show debug information for peer tunnel</help>
+                    </properties>
+                    <command>sudo ${vyos_op_scripts_dir}/vpn_ipsec.py --action="vpn-debug" --name="$5" --tunnel="$7"</command>
+                  </tagNode>
+                </children>
+                <command>sudo ${vyos_op_scripts_dir}/vpn_ipsec.py --action="vpn-debug" --name="$5" --tunnel="all"</command>
+              </tagNode>
+            </children>
+            <command>sudo ${vyos_op_scripts_dir}/vpn_ipsec.py --action="vpn-debug" --name="all"</command>
+          </node>
+          <node name="ike">
+            <properties>
+              <help>Show Internet Key Exchange (IKE) information</help>
+            </properties>
+            <children>
+              <node name="sa">
+                <properties>
+                  <help>Show all currently active IKE Security Associations (SA)</help>
+                </properties>
+                <children>
+                  <node name="nat-traversal">
+                    <properties>
+                      <help>Show all currently active IKE Security Associations (SA) that are using NAT Traversal</help>
+                    </properties>
+                    <command>sudo ${vyos_op_scripts_dir}/vpn_ike_sa.py --nat="yes"</command>
+                  </node>
+                  <tagNode name="peer">
+                    <properties>
+                      <help>Show all currently active IKE Security Associations (SA) for a peer</help>
+                    </properties>
+                    <command>sudo ${vyos_op_scripts_dir}/vpn_ike_sa.py --peer="$6"</command>
+                  </tagNode>
+                </children>
+                <command>sudo ${vyos_op_scripts_dir}/vpn_ike_sa.py</command>
+              </node>
+              <node name="secrets">
+                <properties>
+                  <help>Show all the pre-shared key secrets</help>
+                </properties>
+                <command>sudo cat /etc/ipsec.secrets | sed 's/#.*//'</command>
+              </node>
+              <node name="status">
+                <properties>
+                  <help>Show summary of IKE process information</help>
+                </properties>
+                <command>if pgrep charon >/dev/null ; then echo "Running: $(pgrep charon)" ; else echo "Process is not running" ; fi</command>
+              </node>
+            </children>
+          </node>
+          <node name="ipsec">
+            <properties>
+              <help>Show Internet Protocol Security (IPsec) information</help>
+            </properties>
+            <children>
+              <node name="policy">
+                <properties>
+                  <help>Show the in-kernel crypto policies</help>
+                </properties>
+                <command>sudo ip xfrm policy list</command>
+              </node>
+              <leafNode name="remote-access">
+                 <properties>
+                   <help>Show active VPN server sessions</help>
+                 </properties>
+                <command>${vyos_op_scripts_dir}/show_vpn_ra.py</command>
+              </leafNode>
+              <node name="sa">
+                <properties>
+                  <help>Show all active IPsec Security Associations (SA)</help>
+                </properties>
+                <children>
+                  <!--
+                  <node name="detail">
+                    <properties>
+                      <help>Show Detail on all active IPsec Security Associations (SA)</help>
+                    </properties>
+                    <command></command>
+                  </node>
+                  <tagNode name="stats">
+                    <properties>
+                      <help>Show statistics for all currently active IPsec Security Associations (SA)</help>
+                      <valueHelp>
+                        <format>txt</format>
+                        <description>Show Statistics for SAs associated with a specific peer</description>
+                      </valueHelp>
+                    </properties>
+                    <children>
+                      <tagNode name="tunnel">
+                        <properties>
+                          <help>Show Statistics for SAs associated with a specific peer</help>
+                        </properties>
+                        <command></command>
+                      </tagNode>
+                    </children>
+                    <command></command>
+                  </tagNode>
+                  -->
+                  <node name="verbose">
+                    <properties>
+                      <help>Show Verbose Detail on all active IPsec Security Associations (SA)</help>
+                    </properties>
+                    <command>if pgrep charon >/dev/null ; then sudo /usr/sbin/ipsec statusall ; else echo "IPsec process not running" ; fi</command>
+                  </node>
+                </children>
+                <command>if pgrep charon >/dev/null ; then sudo ${vyos_op_scripts_dir}/ipsec.py show_sa ; else echo "IPsec process not running" ; fi</command>
+              </node>
+              <node name="state">
+                <properties>
+                  <help>Show the in-kernel crypto state</help>
+                </properties>
+                <command>sudo ip xfrm state list</command>
+              </node>
+              <node name="status">
+                <properties>
+                  <help>Show status of IPsec process</help>
+                </properties>
+                <command>if pgrep charon >/dev/null ; then echo -e "IPsec Process Running: $(pgrep charon)\n$(sudo /usr/sbin/ipsec status)" ; else echo "IPsec process not running" ; fi</command>
+              </node>
+            </children>
+          </node>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

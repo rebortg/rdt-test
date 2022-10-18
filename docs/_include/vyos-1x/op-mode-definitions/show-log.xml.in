@@ -1,0 +1,427 @@
+<?xml version="1.0"?>
+<interfaceDefinition>
+  <node name="show">
+    <children>
+      <node name="log">
+        <properties>
+          <help>Show contents of current master log file</help>
+        </properties>
+        <command>journalctl --no-hostname --boot</command>
+        <children>
+          <leafNode name="all">
+            <properties>
+              <help>Show contents of all master log files</help>
+            </properties>
+            <command>sudo bash -c 'eval $(lesspipe); less $_vyatta_less_options --prompt=".logm, file %i of %m., page %dt of %D" -- `printf "%s\n" /var/log/messages* | sort -nr`'</command>
+          </leafNode>
+          <leafNode name="authorization">
+            <properties>
+              <help>Show listing of authorization attempts</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --quiet SYSLOG_FACILITY=10 SYSLOG_FACILITY=4</command>
+          </leafNode>
+          <leafNode name="cluster">
+            <properties>
+              <help>Show log for Cluster</help>
+            </properties>
+            <command>cat $(printf "%s\n" /var/log/messages* | sort -nr) | grep -e heartbeat -e cl_status -e mach_down -e ha_log</command>
+          </leafNode>
+          <leafNode name="conntrack-sync">
+            <properties>
+              <help>Show log for Conntrack-sync</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit conntrackd.service</command>
+          </leafNode>
+          <node name="ids">
+            <properties>
+              <help>Show log for for Intrusion Detection System</help>
+            </properties>
+            <children>
+              <leafNode name="ddos-protection">
+                <properties>
+                  <help>Show log for DDOS protection</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit fastnetmon.service</command>
+              </leafNode>
+            </children>
+          </node>
+          <node name="dhcp">
+            <properties>
+              <help>Show log for Dynamic Host Control Protocol (DHCP)</help>
+            </properties>
+            <children>
+              <node name="server">
+                <properties>
+                  <help>Show log for DHCP server</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit isc-dhcp-server.service</command>
+              </node>
+              <node name="client">
+                <properties>
+                  <help>Show DHCP client logs</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit "dhclient@*.service"</command>
+                <children>
+                  <tagNode name="interface">
+                    <properties>
+                      <help>Show DHCP client log on specific interface</help>
+                      <completionHelp>
+                        <script>${vyos_completion_dir}/list_interfaces.py --broadcast</script>
+                      </completionHelp>
+                    </properties>
+                    <command>journalctl --no-hostname --boot --unit "dhclient@$6.service"</command>
+                  </tagNode>
+                </children>
+              </node>
+            </children>
+          </node>
+          <node name="dhcpv6">
+            <properties>
+              <help>Show log for Dynamic Host Control Protocol IPv6 (DHCPv6)</help>
+            </properties>
+            <children>
+              <node name="server">
+                <properties>
+                  <help>Show log for DHCPv6 server</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit isc-dhcp-server6.service</command>
+              </node>
+              <node name="client">
+                <properties>
+                  <help>Show DHCPv6 client logs</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit "dhcp6c@*.service"</command>
+                <children>
+                  <tagNode name="interface">
+                    <properties>
+                      <help>Show DHCPv6 client log on specific interface</help>
+                      <completionHelp>
+                        <script>${vyos_completion_dir}/list_interfaces.py</script>
+                      </completionHelp>
+                    </properties>
+                    <command>journalctl --no-hostname --boot --unit "dhcp6c@$6.service"</command>
+                  </tagNode>
+                </children>
+              </node>
+            </children>
+          </node>
+          <node name="firewall">
+            <properties>
+              <help>Show log for Firewall</help>
+            </properties>
+            <children>
+              <tagNode name="ipv6-name">
+                <properties>
+                  <help>Show log for a specified firewall (IPv6)</help>
+                  <completionHelp>
+                    <path>firewall ipv6-name</path>
+                  </completionHelp>
+                </properties>
+                <command>cat $(printf "%s\n" /var/log/messages* | sort -nr ) | egrep "\[$5-([0-9]+|default)-[ADR]\]"</command>
+                <children>
+                  <tagNode name="rule">
+                    <properties>
+                      <help>Show log for a rule in the specified firewall</help>
+                      <completionHelp>
+                        <path>firewall ipv6-name ${COMP_WORDS[4]} rule</path>
+                      </completionHelp>
+                    </properties>
+                    <command>cat $(printf "%s\n" /var/log/messages* | sort -nr) | grep -e "\[$5-$7-[ADR]\]"</command>
+                  </tagNode>
+                </children>
+              </tagNode>
+              <tagNode name="name">
+                <properties>
+                  <help>Show log for a specified firewall (IPv4)</help>
+                  <completionHelp>
+                    <path>firewall name</path>
+                  </completionHelp>
+                </properties>
+                <command>cat $(printf "%s\n" /var/log/messages* | sort -nr ) | egrep "\[$5-([0-9]+|default)-[ADR]\]"</command>
+                <children>
+                  <tagNode name="rule">
+                    <properties>
+                      <help>Show log for a rule in the specified firewall</help>
+                      <completionHelp>
+                        <path>firewall name ${COMP_WORDS[4]} rule</path>
+                      </completionHelp>
+                    </properties>
+                    <command>cat $(printf "%s\n" /var/log/messages* | sort -nr) | egrep "\[$5-$7-[ADR]\]"</command>
+                  </tagNode>
+                </children>
+              </tagNode>
+            </children>
+          </node>
+          <leafNode name="flow-accounting">
+            <properties>
+              <help>Show log for flow-accounting</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit uacctd.service</command>
+          </leafNode>
+          <leafNode name="https">
+            <properties>
+              <help>Show log for HTTPs</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit nginx.service</command>
+          </leafNode>
+          <tagNode name="image">
+            <properties>
+              <help>Show contents of master log file for image</help>
+              <completionHelp>
+                <script>compgen -f /lib/live/mount/persistence/boot/ | grep -v grub | sed -e s@/lib/live/mount/persistence/boot/@@</script>
+              </completionHelp>
+            </properties>
+            <command>less $_vyatta_less_options --prompt=".log, page %dt of %D" -- /lib/live/mount/persistence/boot/$4/rw/var/log/messages</command>
+            <children>
+              <leafNode name="all">
+                <properties>
+                  <help>Show contents of all master log files for image</help>
+                </properties>
+                <command>eval $(lesspipe); less $_vyatta_less_options --prompt=".log?m, file %i of %m., page %dt of %D" -- `printf "%s\n" /lib/live/mount/persistence/boot/$4/rw/var/log/messages* | sort -nr`</command>
+              </leafNode>
+              <leafNode name="authorization">
+                <properties>
+                  <help>Show listing of authorization attempts for image</help>
+                </properties>
+                <command>less $_vyatta_less_options --prompt=".log, page %dt of %D" -- /lib/live/mount/persistence/boot/$4/rw/var/log/auth.log</command>
+              </leafNode>
+              <tagNode name="tail">
+                <properties>
+                  <help>Show last changes to messages</help>
+                  <completionHelp>
+                    <list>&lt;NUMBER&gt;</list>
+                  </completionHelp>
+                </properties>
+                <command>tail -n "$6" /lib/live/mount/persistence/boot/$4/rw/var/log/messages | ${VYATTA_PAGER:-cat}</command>
+              </tagNode>
+            </children>
+          </tagNode>
+          <leafNode name="kernel">
+            <properties>
+              <help>Show log for Linux Kernel</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --dmesg</command>
+          </leafNode>
+          <leafNode name="lldp">
+            <properties>
+              <help>Show log for LLDP</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit lldpd.service</command>
+          </leafNode>
+          <leafNode name="nat">
+            <properties>
+              <help>Show log for Network Address Translation (NAT)</help>
+            </properties>
+            <command>egrep -i "kernel:.*\[NAT-[A-Z]{3,}-[0-9]+(-MASQ)?\]" $(find /var/log -maxdepth 1 -type f -name messages\* | sort -t. -k2nr)</command>
+          </leafNode>
+          <leafNode name="nhrp">
+            <properties>
+              <help>Show log for NHRP</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit opennhrp.service</command>
+          </leafNode>
+          <node name="macsec">
+            <properties>
+              <help>Show log for MACsec</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit "wpa_supplicant-macsec@*.service"</command>
+            <children>
+              <tagNode name="interface">
+                <properties>
+                  <help>Show MACsec log on specific interface</help>
+                  <completionHelp>
+                    <script>${vyos_completion_dir}/list_interfaces.py -t macsec</script>
+                  </completionHelp>
+                </properties>
+                <command>SRC=$(cli-shell-api returnValue interfaces macsec "$5" source-interface); journalctl --no-hostname --boot --unit "wpa_supplicant-macsec@$SRC.service"</command>
+              </tagNode>
+            </children>
+          </node>
+          <node name="openvpn">
+            <properties>
+              <help>Show log for OpenVPN</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit openvpn@*.service</command>
+            <children>
+              <tagNode name="interface">
+                <properties>
+                  <help>Show OpenVPN log on specific interface</help>
+                  <completionHelp>
+                    <path>interfaces openvpn</path>
+                  </completionHelp>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit openvpn@$5.service</command>
+              </tagNode>
+            </children>
+          </node>
+          <node name="pppoe">
+            <properties>
+              <help>Show log for PPPoE</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit "ppp@pppoe*.service"</command>
+            <children>
+              <tagNode name="interface">
+                <properties>
+                  <help>Show PPPoE log on specific interface</help>
+                  <completionHelp>
+                    <script>${vyos_completion_dir}/list_interfaces.py -t pppoe</script>
+                  </completionHelp>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit "ppp@$6.service"</command>
+              </tagNode>
+            </children>
+          </node>
+          <node name="protocol">
+            <properties>
+              <help>Show log for Routing Protocol</help>
+            </properties>
+            <children>
+              <leafNode name="ospf">
+                <properties>
+                  <help>Show log for OSPF</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/ospfd</command>
+              </leafNode>
+              <leafNode name="ospfv3">
+                <properties>
+                  <help>Show log for OSPF for IPv6</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/ospf6d</command>
+              </leafNode>
+              <leafNode name="bgp">
+                <properties>
+                  <help>Show log for BGP</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/bgpd</command>
+              </leafNode>
+              <leafNode name="rip">
+                <properties>
+                  <help>Show log for RIP</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/ripd</command>
+              </leafNode>
+              <leafNode name="ripng">
+                <properties>
+                  <help>Show log for RIPng</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/ripngd</command>
+              </leafNode>
+              <leafNode name="static">
+                <properties>
+                  <help>Show log for static route</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/staticd</command>
+              </leafNode>
+              <leafNode name="multicast">
+                <properties>
+                  <help>Show log for Multicast protocol</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/pimd</command>
+              </leafNode>
+              <leafNode name="isis">
+                <properties>
+                  <help>Show log for ISIS</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/isisd</command>
+              </leafNode>
+              <leafNode name="nhrp">
+                <properties>
+                  <help>Show log for NHRP</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/nhrpd</command>
+              </leafNode>
+              <leafNode name="bfd">
+                <properties>
+                  <help>Show log for BFD</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/bfdd</command>
+              </leafNode>
+              <leafNode name="mpls">
+                <properties>
+                  <help>Show log for MPLS</help>
+                </properties>
+                <command>journalctl --boot /usr/lib/frr/ldpd</command>
+              </leafNode>
+            </children>
+          </node>
+          <leafNode name="snmp">
+            <properties>
+              <help>Show log for Simple Network Monitoring Protocol (SNMP)</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit snmpd.service</command>
+          </leafNode>
+          <leafNode name="ssh">
+            <properties>
+              <help>Show log for Secure Shell (SSH)</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit ssh.service</command>
+          </leafNode>
+          <tagNode name="tail">
+            <properties>
+              <help>Show last n changes to messages</help>
+              <completionHelp>
+                <list>&lt;NUMBER&gt;</list>
+              </completionHelp>
+            </properties>
+            <command>tail -n "$4" /var/log/messages | ${VYATTA_PAGER:-cat}</command>
+          </tagNode>
+          <node name="tail">
+            <properties>
+              <help>Show last 10 lines of /var/log/messages file</help>
+            </properties>
+            <command>tail -n 10 /var/log/messages</command>
+          </node>
+          <node name="vpn">
+            <properties>
+              <help>Show log for Virtual Private Network (VPN)</help>
+            </properties>
+            <children>
+              <leafNode name="all">
+                <properties>
+                  <help>Show log for ALL</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit strongswan-starter.service --unit accel-ppp@*.service</command>
+              </leafNode>
+              <leafNode name="ipsec">
+                <properties>
+                  <help>Show log for IPsec</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit strongswan-starter.service</command>
+              </leafNode>
+              <leafNode name="l2tp">
+                <properties>
+                  <help>Show log for L2TP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit accel-ppp@l2tp.service</command>
+              </leafNode>
+              <leafNode name="pptp">
+                <properties>
+                  <help>Show log for PPTP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit accel-ppp@pptp.service</command>
+              </leafNode>
+              <leafNode name="sstp">
+                <properties>
+                  <help>Show log for SSTP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --unit accel-ppp@sstp.service</command>
+              </leafNode>
+            </children>
+          </node>
+          <leafNode name="vrrp">
+            <properties>
+              <help>Show log for Virtual Router Redundancy Protocol (VRRP)</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit keepalived.service</command>
+          </leafNode>
+          <leafNode name="webproxy">
+            <properties>
+              <help>Show log for Webproxy</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit squid.service</command>
+          </leafNode>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

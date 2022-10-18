@@ -1,0 +1,17 @@
+{% set vrf_command = 'ip vrf exec ' ~ vrf ~ ' ' if vrf is vyos_defined else '' %}
+[Unit]
+After=
+After=vyos-router.service
+ConditionPathExists=
+ConditionPathExists=/run/pmacct/uacctd.conf
+
+[Service]
+EnvironmentFile=
+ExecStart=
+ExecStart={{ vrf_command }}/usr/sbin/uacctd -f /run/pmacct/uacctd.conf
+WorkingDirectory=
+WorkingDirectory=/run/pmacct
+PIDFile=
+PIDFile=/run/pmacct/uacctd.pid
+Restart=always
+RestartSec=10

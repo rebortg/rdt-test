@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<interfaceDefinition>
+  <node name="monitor">
+    <children>
+      <node name="log">
+        <properties>
+          <help>Monitor last lines of messages file</help>
+        </properties>
+        <command>journalctl --no-hostname --follow --boot</command>
+        <children>
+          <node name="color">
+            <properties>
+              <help>Output log in a colored fashion</help>
+            </properties>
+            <command>grc journalctl --no-hostname --follow --boot</command>
+          </node>
+          <node name="ids">
+            <properties>
+              <help>Monitor log for Intrusion Detection System</help>
+            </properties>
+            <children>
+              <leafNode name="ddos-protection">
+                <properties>
+                  <help>Monitor last lines of DDOS protection</help>
+                </properties>
+                <command>journalctl --no-hostname --follow --boot --unit fastnetmon.service</command>
+              </leafNode>
+            </children>
+          </node>
+          <node name="dhcp">
+            <properties>
+              <help>Monitor last lines of Dynamic Host Control Protocol (DHCP)</help>
+            </properties>
+            <children>
+              <node name="server">
+                <properties>
+                  <help>Monitor last lines of DHCP server</help>
+                </properties>
+                <command>journalctl --no-hostname --follow --boot --unit isc-dhcp-server.service</command>
+              </node>
+              <node name="client">
+                <properties>
+                  <help>Monitor last lines of DHCP client</help>
+                </properties>
+                <command>journalctl --no-hostname --follow --boot --unit "dhclient@*.service"</command>
+                <children>
+                  <tagNode name="interface">
+                    <properties>
+                      <help>Show DHCP client log on specific interface</help>
+                      <completionHelp>
+                        <script>${vyos_completion_dir}/list_interfaces.py --broadcast</script>
+                      </completionHelp>
+                    </properties>
+                    <command>journalctl --no-hostname --follow --boot --unit "dhclient@$6.service"</command>
+                  </tagNode>
+                </children>
+              </node>
+            </children>
+          </node>
+          <node name="dhcpv6">
+            <properties>
+              <help>Monitor last lines of Dynamic Host Control Protocol IPv6 (DHCPv6)</help>
+            </properties>
+            <children>
+              <node name="server">
+                <properties>
+                  <help>Monitor last lines of DHCPv6 server</help>
+                </properties>
+                <command>journalctl --no-hostname --follow --boot --unit isc-dhcp-server6.service</command>
+              </node>
+              <node name="client">
+                <properties>
+                  <help>Monitor last lines of DHCPv6 client</help>
+                </properties>
+                <command>journalctl --no-hostname --follow --boot --unit "dhcp6c@*.service"</command>
+                <children>
+                  <tagNode name="interface">
+                    <properties>
+                      <help>Show DHCPv6 client log on specific interface</help>
+                      <completionHelp>
+                        <script>${vyos_completion_dir}/list_interfaces.py</script>
+                      </completionHelp>
+                    </properties>
+                    <command>journalctl --no-hostname --follow --boot --unit "dhcp6c@$6.service"</command>
+                  </tagNode>
+                </children>
+              </node>
+            </children>
+          </node>
+          <leafNode name="flow-accounting">
+            <properties>
+              <help>Monitor last lines of flow-accounting log</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --unit uacctd.service</command>
+          </leafNode>
+          <leafNode name="kernel">
+            <properties>
+              <help>Monitor last lines of Linux Kernel log</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --dmesg</command>
+          </leafNode>
+          <leafNode name="nhrp">
+            <properties>
+              <help>Monitor last lines of NHRP log</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --unit opennhrp.service</command>
+          </leafNode>
+          <node name="pppoe">
+            <properties>
+              <help>Monitor last lines of PPPoE log</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --unit "ppp@pppoe*.service"</command>
+            <children>
+              <tagNode name="interface">
+                <properties>
+                  <help>Monitor last lines of PPPoE log for specific interface</help>
+                  <completionHelp>
+                    <script>${vyos_completion_dir}/list_interfaces.py -t pppoe</script>
+                  </completionHelp>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit "ppp@$6.service"</command>
+              </tagNode>
+            </children>
+          </node>
+          <node name="protocol">
+            <properties>
+              <help>Monitor log for Routing Protocol</help>
+            </properties>
+            <children>
+              <leafNode name="ospf">
+                <properties>
+                  <help>Monitor log for OSPF</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/ospfd</command>
+              </leafNode>
+              <leafNode name="ospfv3">
+                <properties>
+                  <help>Monitor log for OSPF for IPv6</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/ospf6d</command>
+              </leafNode>
+              <leafNode name="bgp">
+                <properties>
+                  <help>Monitor log for BGP</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/bgpd</command>
+              </leafNode>
+              <leafNode name="rip">
+                <properties>
+                  <help>Monitor log for RIP</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/ripd</command>
+              </leafNode>
+              <leafNode name="ripng">
+                <properties>
+                  <help>Monitor log for RIPng</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/ripngd</command>
+              </leafNode>
+              <leafNode name="static">
+                <properties>
+                  <help>Monitor log for static route</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/staticd</command>
+              </leafNode>
+              <leafNode name="multicast">
+                <properties>
+                  <help>Monitor log for Multicast protocol</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/pimd</command>
+              </leafNode>
+              <leafNode name="isis">
+                <properties>
+                  <help>Monitor log for ISIS</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/isisd</command>
+              </leafNode>
+              <leafNode name="nhrp">
+                <properties>
+                  <help>Monitor log for NHRP</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/nhrpd</command>
+              </leafNode>
+              <leafNode name="bfd">
+                <properties>
+                  <help>Monitor log for BFD</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/bfdd</command>
+              </leafNode>
+              <leafNode name="mpls">
+                <properties>
+                  <help>Monitor log for MPLS</help>
+                </properties>
+                <command>journalctl --follow --no-hostname --boot /usr/lib/frr/ldpd</command>
+              </leafNode>
+            </children>
+          </node>
+          <node name="macsec">
+            <properties>
+              <help>Monitor last lines of MACsec</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --unit "wpa_supplicant-macsec@*.service"</command>
+            <children>
+              <tagNode name="interface">
+                <properties>
+                  <help>Monitor last lines of specific MACsec interface</help>
+                  <completionHelp>
+                    <script>${vyos_completion_dir}/list_interfaces.py -t macsec</script>
+                  </completionHelp>
+                </properties>
+                <command>SRC=$(cli-shell-api returnValue interfaces macsec "$5" source-interface); journalctl --no-hostname --boot --follow --unit "wpa_supplicant-macsec@$SRC.service"</command>
+              </tagNode>
+            </children>
+          </node>
+          <leafNode name="snmp">
+            <properties>
+              <help>Monitor last lines of Simple Network Monitoring Protocol (SNMP)</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --unit snmpd.service</command>
+          </leafNode>
+          <leafNode name="ssh">
+            <properties>
+              <help>Monitor last lines of Secure Shell (SSH)</help>
+            </properties>
+            <command>journalctl --no-hostname --boot --follow --unit ssh.service</command>
+          </leafNode>
+          <node name="vpn">
+            <properties>
+              <help>Show log for Virtual Private Network (VPN)</help>
+            </properties>
+            <children>
+              <leafNode name="all">
+                <properties>
+                  <help>Monitor last lines of ALL VPNs</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit strongswan-starter.service --unit accel-ppp@*.service</command>
+              </leafNode>
+              <leafNode name="ipsec">
+                <properties>
+                  <help>Monitor last lines of IPsec</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit strongswan-starter.service</command>
+              </leafNode>
+              <leafNode name="l2tp">
+                <properties>
+                  <help>Monitor last lines of L2TP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit accel-ppp@l2tp.service</command>
+              </leafNode>
+              <leafNode name="pptp">
+                <properties>
+                  <help>Monitor last lines of PPTP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit accel-ppp@pptp.service</command>
+              </leafNode>
+              <leafNode name="sstp">
+                <properties>
+                  <help>Monitor last lines of SSTP</help>
+                </properties>
+                <command>journalctl --no-hostname --boot --follow --unit accel-ppp@sstp.service</command>
+              </leafNode>
+            </children>
+          </node>
+        </children>
+      </node>
+    </children>
+  </node>
+</interfaceDefinition>

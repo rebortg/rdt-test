@@ -1,2 +1,26 @@
 # Sphinx
 _build/
+
+# python virtualenv
+venv/
+ENV/
+.venv
+Pipfile.lock
+
+# put various editor ignores here
+.vscode/
+*.vpj
+*.vpw
+*.vpwhist
+*.vtg
+
+# python cache files
+*.pyc
+__pycache__
+
+# dotenv
+.env
+.envrc
+
+# os specific
+.DS_Store

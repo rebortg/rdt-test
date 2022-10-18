@@ -1,0 +1,115 @@
+#!/bin/sh -e
+
+# Turn off Debian default for %sudo
+sed -i -e '/^%sudo/d' /etc/sudoers || true
+
+# Add minion user for salt-minion
+if ! grep -q '^minion' /etc/passwd; then
+    adduser --quiet --firstuid 100 --system --disabled-login --ingroup vyattacfg \
+        --gecos "salt minion user" --shell /bin/vbash minion
+    adduser --quiet minion frrvty
+    adduser --quiet minion sudo
+    adduser --quiet minion adm
+    adduser --quiet minion dip
+    adduser --quiet minion disk
+    adduser --quiet minion users
+    adduser --quiet minion frr
+fi
+
+# OpenVPN should get its own user
+if ! grep -q '^openvpn' /etc/passwd; then
+    adduser --quiet --firstuid 100 --system --group --shell /usr/sbin/nologin openvpn
+fi
+
+# Enable 2FA/MFA support for SSH and local logins
+for file in /etc/pam.d/sshd /etc/pam.d/login
+do
+    PAM_CONFIG="auth       required     pam_google_authenticator.so nullok"
+    grep -qF -- "${PAM_CONFIG}" $file || \
+    sed -i "/^@include common-auth/a # Check 2FA/MFA authentication token if enabled (per user)\n${PAM_CONFIG}" $file
+done
+
+# Add RADIUS operator user for RADIUS authenticated users to map to
+if ! grep -q '^radius_user' /etc/passwd; then
+    adduser --quiet --firstuid 1000 --disabled-login --ingroup vyattaop \
+        --no-create-home --gecos "radius user" \
+        --shell /sbin/radius_shell radius_user
+    adduser --quiet radius_user frrvty
+    adduser --quiet radius_user vyattaop
+    adduser --quiet radius_user operator
+    adduser --quiet radius_user adm
+    adduser --quiet radius_user dip
+    adduser --quiet radius_user users
+fi
+
+# Add RADIUS admin user for RADIUS authenticated users to map to
+if ! grep -q '^radius_priv_user' /etc/passwd; then
+    adduser --quiet --firstuid 1000 --disabled-login --ingroup vyattacfg \
+        --no-create-home --gecos "radius privileged user" \
+        --shell /sbin/radius_shell radius_priv_user
+    adduser --quiet radius_priv_user frrvty
+    adduser --quiet radius_priv_user vyattacfg
+    adduser --quiet radius_priv_user sudo
+    adduser --quiet radius_priv_user adm
+    adduser --quiet radius_priv_user dip
+    adduser --quiet radius_priv_user disk
+    adduser --quiet radius_priv_user users
+    adduser --quiet radius_priv_user frr
+fi
+
+# add hostsd group for vyos-hostsd
+if ! grep -q '^hostsd' /etc/group; then
+    addgroup --quiet --system hostsd
+fi
+
+# add dhcpd user for dhcp-server
+if ! grep -q '^dhcpd' /etc/passwd; then
+    adduser --quiet --system --disabled-login --no-create-home --home /run/dhcp-server dhcpd
+    adduser --quiet dhcpd hostsd
+fi
+
+# ensure hte proxy user has a proper shell
+chsh -s /bin/sh proxy
+
+# create /opt/vyatta/etc/config/scripts/vyos-postconfig-bootup.script
+POSTCONFIG_SCRIPT=/opt/vyatta/etc/config/scripts/vyos-postconfig-bootup.script
+if [ ! -x $POSTCONFIG_SCRIPT ]; then
+    mkdir -p $(dirname $POSTCONFIG_SCRIPT)
+    touch $POSTCONFIG_SCRIPT
+    chmod 755 $POSTCONFIG_SCRIPT
+    cat <<EOF >>$POSTCONFIG_SCRIPT
+#!/bin/sh
+# This script is executed at boot time after VyOS configuration is fully applied.
+# Any modifications required to work around unfixed bugs
+# or use services not available through the VyOS CLI system can be placed here.
+
+EOF
+fi
+
+# symlink destination is deleted during ISO assembly - this generates some noise
+# when the system boots: systemd-sysv-generator[1881]: stat() failed on
+# /etc/init.d/README, ignoring: No such file or directory. Thus we simply drop
+# the file.
+if [ -L /etc/init.d/README ]; then
+    rm -f /etc/init.d/README
+fi
+
+# Remove unwanted daemon files from /etc
+# conntackd
+# pmacct
+# fastnetmon
+# ntp
+DELETE="/etc/logrotate.d/conntrackd.distrib /etc/init.d/conntrackd /etc/default/conntrackd
+        /etc/default/pmacctd /etc/pmacct
+        /etc/networks_list /etc/networks_whitelist /etc/fastnetmon.conf
+        /etc/ntp.conf /etc/default/ssh
+        /etc/powerdns /etc/default/pdns-recursor"
+for tmp in $DELETE; do
+    if [ -e ${tmp} ]; then
+        rm -rf ${tmp}
+    fi
+done
+
+# Remove logrotate items controlled via CLI and VyOS defaults
+sed -i '/^\/var\/log\/messages$/d' /etc/logrotate.d/rsyslog
+sed -i '/^\/var\/log\/auth.log$/d' /etc/logrotate.d/rsyslog

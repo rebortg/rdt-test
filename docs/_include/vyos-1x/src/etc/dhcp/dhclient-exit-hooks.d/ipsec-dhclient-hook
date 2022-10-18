@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# Copyright (C) 2021 VyOS maintainers and contributors
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 or later as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+if [ "$reason" == "REBOOT" ] || [ "$reason" == "EXPIRE" ]; then
+    exit 0
+fi
+
+DHCP_HOOK_IFLIST="/tmp/ipsec_dhcp_waiting"
+
+if [ -f $DHCP_HOOK_IFLIST ] && [ "$reason" == "BOUND" ]; then
+    if grep -qw $interface $DHCP_HOOK_IFLIST; then
+        sudo rm $DHCP_HOOK_IFLIST
+        sudo python3 /usr/libexec/vyos/conf_mode/vpn_ipsec.py
+        exit 0
+    fi
+fi
+
+if [ "$old_ip_address" == "$new_ip_address" ] && [ "$reason" == "BOUND" ]; then
+    exit 0
+fi
+
+python3 - <<PYEND
+import os
+import re
+
+from vyos.util import call
+from vyos.util import cmd
+from vyos.util import read_file
+from vyos.util import write_file
+
+SWANCTL_CONF="/etc/swanctl/swanctl.conf"
+
+def ipsec_down(ip_address):
+    # This prevents the need to restart ipsec and kill all active connections, only the stale connection is closed
+    status = cmd('sudo ipsec statusall')
+    connection_name = None
+    for line in status.split("\n"):
+        if line.find(ip_address) > 0:
+            regex_match = re.search(r'(peer_[^:\[]+)', line)
+            if regex_match:
+                connection_name = regex_match[1]
+                break
+    if connection_name:
+        call(f'sudo ipsec down {connection_name}')
+
+if __name__ == '__main__':
+    interface = os.getenv('interface')
+    new_ip = os.getenv('new_ip_address')
+    old_ip = os.getenv('old_ip_address')
+
+    if os.path.exists(SWANCTL_CONF):
+        conf_lines = read_file(SWANCTL_CONF)
+        found = False
+        to_match = f'# dhcp:{interface}'
+
+        for i, line in enumerate(conf_lines):
+            if line.find(to_match) > 0:
+                conf_lines[i] = line.replace(old_ip, new_ip)
+                found = True
+
+        for i, line in enumerate(secrets_lines):
+            if line.find(to_match) > 0:
+                secrets_lines[i] = line.replace(old_ip, new_ip)
+
+        if found:
+            write_file(SWANCTL_CONF, conf_lines)
+            ipsec_down(old_ip)
+            call('sudo ipsec rereadall')
+            call('sudo ipsec reload')
+            call('sudo swanctl -q')
+
+    exit(0)
+PYEND

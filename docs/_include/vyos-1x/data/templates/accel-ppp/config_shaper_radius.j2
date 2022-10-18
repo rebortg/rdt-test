@@ -1,0 +1,13 @@
+{% if authentication.mode is vyos_defined('radius') %}
+{%     if authentication.radius.rate_limit.enable is vyos_defined %}
+[shaper]
+verbose=1
+attr={{ authentication.radius.rate_limit.attribute }}
+{%         if authentication.radius.rate_limit.vendor is vyos_defined %}
+vendor={{ authentication.radius.rate_limit.vendor }}
+{%         endif %}
+{%         if authentication.radius.rate_limit.multiplier is vyos_defined %}
+rate-multiplier={{ authentication.radius.rate_limit.multiplier }}
+{%         endif %}
+{%     endif %}
+{% endif %}
