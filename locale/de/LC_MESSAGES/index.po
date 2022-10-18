@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../index.rst:7
 msgid "Welcome to rdt-tests's documentation!"
-msgstr ""
+msgstr "HAllO"
 
 #: ../../index.rst:16
 msgid "Indices and tables"
