@@ -26,7 +26,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-locale_dirs = ['locale/']   # path is example but recommended.
+locale_dirs = ['locale']   # path is example but recommended.
 # https://docs.readthedocs.io/en/stable/guides/manage-translations-sphinx.html#create-translatable-files
 gettext_compact = False
 gettext_uuid = True
